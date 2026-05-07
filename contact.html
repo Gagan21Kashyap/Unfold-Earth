@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact - Unfold Earth</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style> 
+      .headd {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 12%;
+        text-shadow: 0 0 50px black;
+      }
+
+      .nav_item {
+        list-style: none;
+        display: inline-block;
+        padding: 20px;
+        font-size: 30px;
+        text-shadow: 0 0 20px black;
+        pointer-events: auto;
+      }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+ 
+        .nav-container{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+
+        }
+        .dropdown{
+    position:relative;
+}
+.dropbtn{
+    cursor:pointer;
+    padding-bottom:20px;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:80%;
+    left:0;
+    z-index:9999;
+    background:rgba(0, 0, 0, 0.5);
+    min-width:220px;
+    border-radius:3px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12)
+}
+.dropdown-content a{
+    padding:12px;
+    display:block;
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.dropdown-content a:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #a1c4fd, #c2e9fb, #d4fc79);
+    color: #333;
+}
+.nav {
+    background: rgba(0,0,0,0.5);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav_item {
+    padding: 20px;
+    font-size: 30px;
+}
+
+.nav_item a {
+    text-decoration: none;
+    color: white;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    min-width: 200px;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+    border-bottom: 1px solid white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.hero {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h1 {
+    font-size: 40px;
+    color: #0077b6;
+}
+
+.hero p {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.container {
+    width: 1100px;
+    margin: auto;
+}
+
+.contact-grid {
+    display: flex;
+    gap: 50px;
+    margin: 60px 0;
+}
+
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 50%;
+    border: 1px solid #eee;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0077b6;
+}
+.input-group {
+    margin-bottom: 20px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+button {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg,#00b4d8,#0077b6);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.info-item {
+    margin-bottom: 20px;
+}
+
+.info-item h4 {
+    margin-bottom: 5px;
+}
+
+.social {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.social a {
+    font-size: 20px;
+    margin: 10px;
+    color: #0077b6;
+    background: #e0f7ff;
+    padding: 10px;
+    border-radius: 50%;
+}
+
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #ddd;
+    color:#555;
+    font-size:1.2rem;
+    background:#f8fbff;
+}
+
+</style>
+</head>
+
+<body>
+
+        <div class="heading">
+            <nav class="nav">
+                <ul class="nav-container">
+                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+                    <div class="dropdown-content">
+                        <a href="africa.html">Africa </a>
+                        <a href="asia.html">Asia </a>
+                        <a href="america.html">America </a>
+                        <a href="europe.html">Europe </a>
+                        <a href="carribean.html">Carribean </a>
+                    </div>
+                </li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                    <div class="dropdown-content">
+                        <a href="beaches.html">Beach</a>
+                        <a href="mountains.html">Mountains</a>
+                        <a href="wildlife.html">Wildlife</a>
+                        <a href="desert.html">Desert</a>
+                        <a href="waterfall.html">Waterfall</a>
+                        <a href="volcanos.html">Volcanoes</a>
+                        <a href="monuments.html">Monuments</a>
+                    </div></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+                    <div class="dropdown-content">
+                      <a href="artgallery.html">Art Gallery</a>
+                      <a href="imagegallery.html">Image Gallery</a>
+
+                    </div></li>
+                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+                </ul>
+              </nav>
+
+<section class="hero">
+    <h1>Contact Us</h1>
+    <p>Let’s explore the world together 🌍</p>
+</section>
+
+<div class="container">
+    <div class="contact-grid">
+
+        <div class="card">
+            <h2>Send Message</h2>
+            <form>
+
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Full Name</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="email" required placeholder=" ">
+                    <label>Email</label>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" required placeholder=" ">
+                    <label>Subject</label>
+                </div>
+
+                <div class="input-group">
+                    <textarea rows="4" required placeholder=" "></textarea>
+                    <label>Your Message</label>
+                </div>
+
+                <button>Send Message</button>
+
+            </form>
+        </div>
+
+        <div class="card">
+            <h2>Contact Info</h2>
+
+            <div class="info-item">
+                <h4>📞 Phone</h4>
+                <p>+91 XXXXX XXXXX</p>
+            </div>
+
+            <div class="info-item">
+                <h4>📧 Email</h4>
+                <p>youremail@gmail.com</p>
+            </div>
+
+            <div class="info-item">
+                <h4>📍 Location</h4>
+                <p>India</p>
+            </div>
+
+            <div class="social">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    © 2026 Unfold Earth | Travel the world 🌎
+</div>
+
+</body>
+</html>

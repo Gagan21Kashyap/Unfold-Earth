@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itenary • Plan Your Perfect Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: #1e2937;
+            background: #fff;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        .container {
+            max-width: 1380px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .nav-container {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        .nav_item {
+            list-style: none;
+            display: inline-block;
+            padding: 20px;
+            font-size: 30px;
+            text-shadow: 0 0 20px black;
+            pointer-events: auto;
+        }
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropbtn {
+            cursor: pointer;
+            padding-bottom: 20px;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 80%;
+            left: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 220px;
+            border-radius: 3px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+        .dropdown-content a {
+            padding: 12px;
+            display: block;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 600;
+            color: white;
+            border-bottom: 1px solid white;
+        }
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        #hero {
+            height: 100vh;
+            min-height: 820px;
+            background: linear-gradient(rgba(0, 180, 216, 0.45), rgba(255, 149, 0, 0.35)),
+                        url('introimg.jpg') center/cover no-repeat fixed;
+            display: flex;
+            align-items: center;
+            position: relative;
+            color: white;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 820px;
+        }
+
+        .hero-content h1 {
+            font-size: 5.2rem;
+            margin-bottom: 18px;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.65rem;
+            margin-bottom: 50px;
+            max-width: 580px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg, #ff9500, #ffb74d);
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 600;
+            padding: 22px 58px;
+            border-radius: 60px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            box-shadow: 0 20px 40px rgba(255, 149, 0, 0.35);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 30px 50px rgba(255, 149, 0, 0.45);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .section-header span {
+            display: inline-block;
+            background: linear-gradient(90deg, #00b4d8, #ff9500);
+            color: white;
+            padding: 6px 24px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 3.2rem;
+            color: #1e2937;
+        }
+
+        .section-header p {
+            font-size: 1.35rem;
+            max-width: 660px;
+            margin: 20px auto 0;
+            opacity: 0.85;
+        }
+
+        #intro {
+            background: linear-gradient(180deg, #7bb2df, #fff);
+            padding: 120px 0;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 90px;
+            align-items: center;
+        }
+
+        .intro-text h2 {
+            font-size: 3rem;
+            margin-bottom: 24px;
+        }
+
+        .intro-text p {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+        }
+
+        .introbut{
+            display: flex;
+        }
+        #featured {
+            background: #fff;
+            padding: 110px 0;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 28px;
+        }
+
+        .itinerary-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.09);
+        }
+
+        .itinerary-card:hover {
+            transform: translateY(-18px);
+            box-shadow: 0 35px 60px rgba(0, 180, 216, 0.25);
+        }
+
+        .itinerary-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+
+        .card-body {
+            padding: 26px;
+        }
+
+        .card-body .duration {
+            display: inline-flex;
+            align-items: center;
+            background: #e0f7fa;
+            color: #00b4d8;
+            font-size: 0.95rem;
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .card-body h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .card-body p {
+            font-size: 1.05rem;
+            opacity: 0.85;
+            margin-bottom: 20px;
+        }
+
+
+
+        #detailed {
+            background: linear-gradient(135deg, #00b4d8, #ff9500);
+            color: white;
+            padding: 130px 0;
+            position: relative;
+        }
+
+        .detailed-container {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(16px);
+            border-radius: 36px;
+            padding: 70px 80px;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.25);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            position: absolute;
+            left: 38px;
+            top: 0;
+            bottom: 0;
+            width: 6px;
+            background: rgba(255,255,255,0.4);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .timeline-dot {
+            width: 82px;
+            height: 82px;
+            background: white;
+            color: #00b4d8;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            z-index: 2;
+            position: relative;
+        }
+
+        .timeline-content {
+            background: rgba(255,255,255,0.15);
+            padding: 32px;
+            border-radius: 24px;
+            backdrop-filter: blur(8px);
+        }
+
+        .timeline-content h3 {
+            font-size: 1.65rem;
+            margin-bottom: 12px;
+        }
+
+        #form {
+            background: #fff;
+            padding: 120px 0;
+        }
+
+        .form-wrapper {
+            background: linear-gradient(135deg, #f0f9ff, #fff7ed);
+            border-radius: 40px;
+            padding: 70px 80px;
+            box-shadow: 0 30px 70px rgba(0, 180, 216, 0.2);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            color: #1e2937;
+        }
+
+
+        .checkboxes {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        .submit-button {
+            background: linear-gradient(90deg, #00b4d8, #ff9500);
+            color: white;
+            border: none;
+            padding: 24px 70px;
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-radius: 60px;
+            width: 100%;
+            margin-top: 30px;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px rgba(0, 180, 216, 0.4);
+        }
+
+        #categories {
+            background: linear-gradient(180deg, #fff7ed, #f8f9ff);
+            padding: 110px 0;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 24px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 28px;
+            padding: 40px 24px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.08);
+            box-shadow: 0 30px 50px rgba(255, 149, 0, 0.25);
+        }
+
+        .category-icon {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+        }
+
+        #tips {
+            background: #fff;
+            padding: 110px 0;
+        }
+
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 26px;
+        }
+
+        .tip-card {
+            background: #f0f9ff;
+            border-radius: 24px;
+            padding: 32px;
+        }
+
+        .tip-card:hover {
+            background: white;
+            transform: translateY(-12px);
+            box-shadow: 0 25px 45px rgba(0, 180, 216, 0.15);
+        }
+
+        .tip-number {
+            width: 48px;
+            height: 48px;
+            background: #00b4d8;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        #why {
+            background: linear-gradient(135deg, #00b4d8, #ff9500);
+            color: white;
+            padding: 120px 0;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+        }
+
+        .why-box {
+            background: rgba(255,255,255,0.18);
+            border-radius: 28px;
+            padding: 40px 28px;
+            text-align: center;
+            backdrop-filter: blur(12px);
+        }
+
+        .why-box:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-10px);
+        }
+
+        .why-icon {
+            font-size: 3.6rem;
+            margin-bottom: 22px;
+        }
+
+        #testimonials {
+            background: #fff;
+            padding: 110px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #f8f9ff;
+            border-radius: 28px;
+            padding: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.07);
+        }
+
+        .testimonial-card p {
+            font-size: 1.25rem;
+            font-style: italic;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .avatar {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(#00b4d8, #ff9500);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid #ddd;
+            color: #555;
+            font-size: 1.2rem;
+            background: #f8fbff;
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <ul class="nav-container">
+            <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+            <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+                <div class="dropdown-content">
+                    <a href="africa.html">Africa </a>
+                    <a href="asia.html">Asia </a>
+                    <a href="america.html">America </a>
+                    <a href="europe.html">Europe </a>
+                    <a href="carribean.html">Carribean </a>
+                </div>
+            </li>
+            <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                <div class="dropdown-content">
+                    <a href="beaches.html">Beach</a>
+                    <a href="mountains.html">Mountains</a>
+                    <a href="wildlife.html">Wildlife</a>
+                    <a href="desert.html">Desert</a>
+                    <a href="waterfall.html">Waterfall</a>
+                    <a href="volcanos.html">Volcanoes</a>
+                    <a href="monuments.html">Monuments</a>
+                </div>
+            </li>
+            <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+                <div class="dropdown-content">
+                    <a href="artgallery.html">Art Gallery</a>
+                    <a href="imagegallery.html">Image Gallery</a>
+                </div>
+            </li>
+            <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+            <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Plan Your Perfect Itinerary</h1>
+                <p>From dreamy beaches to majestic mountains — turn your travel dreams into a perfectly organized adventure in minutes.</p>
+                <a href="#formbuild" class="cta-button">
+                    Build My Dream Trip
+                    <span>→</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section id="intro">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <h2>Your Journey, Perfectly Planned</h2>
+                    <p>A travel itinerary is more than just a schedule — it's your personal roadmap to unforgettable experiences. It turns chaos into calm, helping you maximize every moment while discovering hidden gems along the way.</p>
+                    <p>Whether you're a first-time explorer or a seasoned globetrotter, a well-crafted itinerary saves time, reduces stress, and ensures every day is filled with wonder, culture, and joy.</p>
+                    <div class="introbut">
+                        <div>
+                            <div>98%</div>
+                            <p>Travelers say our itineraries made their trip better</p>
+                        </div>
+                        <div>
+                            <div>12,458</div>
+                            <p>Custom itineraries created this month</p>
+                        </div>
+                    </div>
+                </div>
+                <img src="travel.jpg" alt="Travel planning map">
+            </div>
+        </div>
+    </section>
+
+    <section id="featured">
+        <div class="container">
+            <div class="section-header">
+                <span>✨ Curated By Experts</span>
+                <h2>Featured Global Itineraries</h2>
+                <p>Handpicked journeys loved by thousands of travelers worldwide</p>
+            </div>
+            
+            <div class="featured-grid">
+
+                <div class="itinerary-card">
+                    <img src="europe.jpg" alt="Europe">
+                    <div class="card-body">
+                        <div class="duration">7 Days • Europe</div>
+                        <h3>Grand European Discovery</h3>
+                        <p>Paris → Swiss Alps → Venice. Iconic cities, breathtaking mountains, and romantic canals.</p>
+                    </div>
+                </div>
+                
+                <div class="itinerary-card">
+                    <img src="bali.png" alt="Bali">
+                    <div class="card-body">
+                        <div class="duration">5 Days • Indonesia</div>
+                        <h3>Bali Bliss Escape</h3>
+                        <p>Rice terraces, private villas, and golden sunsets in the Island of the Gods.</p>
+                    </div>
+                </div>
+                
+                <div class="itinerary-card">
+                    <img src="dubai.png" alt="Dubai">
+                    <div class="card-body">
+                        <div class="duration">4 Days • UAE</div>
+                        <h3>Dubai Luxury Escape</h3>
+                        <p>Burj Khalifa, desert safaris, and futuristic architecture at its finest.</p>
+                    </div>
+                </div>
+                
+                <div class="itinerary-card">
+                    <img src="himacha.jpg" alt="Himachal">
+                    <div class="card-body">
+                        <div class="duration">6 Days • India</div>
+                        <h3>Himachal Himalayan Adventure</h3>
+                        <p>Snow-capped peaks, apple orchards, and thrilling mountain treks.</p>
+                    </div>
+                </div>
+                
+                <div class="itinerary-card">
+                    <img src="thiland.jpg" alt="Thailand">
+                    <div class="card-body">
+                        <div class="duration">5 Days • Thailand</div>
+                        <h3>Thailand Tropical Odyssey</h3>
+                        <p>Bangkok temples to Phuket beaches — temples, islands & street food heaven.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="detailed">
+        <div class="container">
+            <div class="detailed-container">
+                <div class="section-header">
+                    <span">📍 7-DAY EUROPE ITINERARY</span>
+                    <h2>Paris → Swiss Alps → Venice</h2>
+                    <p>Your perfectly balanced European dream trip</p>
+                </div>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
+                            <h3>Day 1 • Arrival in Paris</h3>
+                            <p>Private airport transfer • Eiffel Tower sunset cruise • Welcome dinner at a Michelin-starred bistro • Overnight at Le Bristol Paris</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
+                            <h3>Day 2 • Iconic Paris Highlights</h3>
+                            <p>Louvre Museum guided tour • Seine River lunch cruise • Notre-Dame & Montmartre walking tour • Evening at Moulin Rouge</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
+                            <h3>Day 3 • Train to Swiss Alps</h3>
+                            <p>Scenic high-speed train to Interlaken • Jungfraujoch “Top of Europe” excursion • Cable car ride & snow activities • Luxury chalet dinner</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-content">
+                            <h3>Day 4 • Alpine Adventure</h3>
+                            <p>Boat ride on Lake Lucerne • Paragliding or easy mountain hike • Chocolate tasting workshop • Stargazing at night</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">5</div>
+                        <div class="timeline-content">
+                            <h3>Day 5 • Venice Arrival</h3>
+                            <p>Private water taxi transfer • Gondola ride at sunset • Piazza San Marco & Doge's Palace visit • Romantic Italian dinner</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">6</div>
+                        <div class="timeline-content">
+                            <h3>Day 6 • Hidden Venice Gems</h3>
+                            <p>Burano & Murano islands boat tour • Mask-making workshop • Cicchetti & wine tasting • Free evening for shopping</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">7</div>
+                        <div class="timeline-content">
+                            <h3>Day 7 • Departure</h3>
+                            <p>Morning at leisure • Private transfer to airport • Farewell with a custom travel journal gift</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="form">
+        <div class="container">
+            <div class="form-wrapper">
+                <div class="section-header">
+                    <span>✍️ MAKE IT YOURS</span>
+                    <h2>Build Your Custom Itinerary</h2>
+                    <p>Tell us your vision — our travel experts will craft a perfect plan just for you</p>
+                </div>
+                
+                <form>
+                    <div class="form-grid" id="formbuild">
+                        <div class="form-group">
+                            <label>Your Full Name</label>
+                            <input type="text" placeholder="Alex Rivera" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="example@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Preferred Destination</label>
+                            <select required>
+                                <option value="">Choose destination</option>
+                                <option value="europe">Europe (Multi-country)</option>
+                                <option value="bali">Bali, Indonesia</option>
+                                <option value="dubai">Dubai, UAE</option>
+                                <option value="himachal">Himachal, India</option>
+                                <option value="thailand">Thailand</option>
+                                <option value="japan">Japan Cherry Blossoms</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Number of Travelers</label>
+                            <select required>
+                                <option value="">Select</option>
+                                <option value="2">2 travelers</option>
+                                <option value="3">3 travelers</option>
+                                <option value="4" selected>4 travelers</option>
+                                <option value="5">5+ travelers</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Travel Start Date</label>
+                            <input type="date" value="2026-06-15">
+                        </div>
+                        <div class="form-group">
+                            <label>Budget Range (USD)</label>
+                            <select required>
+                                <option value="">Select budget</option>
+                                <option value="3000">$3,000 - $6,000</option>
+                                <option value="7000" selected>$7,000 - $12,000</option>
+                                <option value="13000">$13,000 - $20,000</option>
+                                <option value="20000">$20,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>Travel Style</label>
+                            <select required>
+                                <option value="">Select style</option>
+                                <option value="family">Family Trip</option>
+                                <option value="couple" selected>Couple / Romantic</option>
+                                <option value="adventure">Adventure & Active</option>
+                                <option value="luxury">Luxury Escape</option>
+                                <option value="solo">Solo Explorer</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group full">
+                            <label>Preferred Activities (select all that apply)</label>
+                            <div class="checkboxes">
+                                <label class="checkbox-label"><input type="checkbox" checked> 🏔️ Mountain Hiking</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🏖️ Beach Relaxation</label>
+                                <label class="checkbox-label"><input type="checkbox" checked> 🏛️ Cultural Tours</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🍷 Food & Wine</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🚤 Boat Cruises</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🦋 Wildlife Safari</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🎢 Adventure Sports</label>
+                                <label class="checkbox-label"><input type="checkbox"> 🛍️ Shopping & Markets</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full">
+                            <label>Special Requests or Notes</label>
+                            <textarea rows="5" placeholder="We love vegetarian food, prefer private transfers, and want a sunset photography session..."></textarea>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="submit-button">
+                        ✨ Generate My Personalized Itinerary ✨
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span>🌍 FIND YOUR PERFECT TRIP</span>
+                <h2>Travel Categories</h2>
+            </div>
+            
+            <div class="categories-grid">
+                <div class="category-card">
+                    <div class="category-icon">👨‍👧‍👦</div>
+                    <h3>Family Trips</h3>
+                    <p>Kid-friendly adventures with memory-making moments</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">🏔️</div>
+                    <h3>Adventure Trips</h3>
+                    <p>Thrilling hikes, safaris & extreme experiences</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💎</div>
+                    <h3>Luxury Travel</h3>
+                    <p>Private jets, 5-star resorts & VIP experiences</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💰</div>
+                    <h3>Budget Smart</h3>
+                    <p>Affordable trips packed with value & culture</p>
+                </div>
+                <div class="category-card">
+                    <div class="category-icon">💕</div>
+                    <h3>Honeymoon Packages</h3>
+                    <p>Romantic escapes designed for two</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tips">
+        <div class="container">
+            <div class="section-header">
+                <span>💡 EXPERT ADVICE</span>
+                <h2>Smart Tips for Perfect Itineraries</h2>
+            </div>
+            
+            <div class="tips-grid">
+                <div class="tip-card">
+                    <div class="tip-number">01</div>
+                    <h3>Book Flights Early</h3>
+                    <p>Reserve international flights 4-6 months ahead to save up to 40% on tickets.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">02</div>
+                    <h3>Balance Activities</h3>
+                    <p>Mix high-energy days with relaxed downtime so you never feel rushed.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">03</div>
+                    <h3>Use Local Apps</h3>
+                    <p>Download offline maps and translation tools before you land.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">04</div>
+                    <h3>Build in Buffer Time</h3>
+                    <p>Always leave 1-2 flexible days for spontaneous discoveries.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">05</div>
+                    <h3>Pack Light & Smart</h3>
+                    <p>Follow the 3-2-1 rule: 3 tops, 2 bottoms, 1 pair of versatile shoes.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">06</div>
+                    <h3>Track Your Budget</h3>
+                    <p>Use a shared Google Sheet to split expenses easily with travel companions.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">07</div>
+                    <h3>Stay Connected Safely</h3>
+                    <p>Get a local eSIM and enable two-factor authentication everywhere.</p>
+                </div>
+                <div class="tip-card">
+                    <div class="tip-number">08</div>
+                    <h3>Document Everything</h3>
+                    <p>Take daily notes or photos — you'll thank yourself when reliving the trip.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="why">
+        <div class="container">
+            <div class="section-header">
+                <span>🚀 WHY TRAVELERS LOVE US</span>
+                <h2>Why Choose Our Itinerary Planning</h2>
+            </div>
+            
+            <div class="why-grid">
+                <div class="why-box">
+                    <div class="why-icon">⏰</div>
+                    <h3>Saves You Hours</h3>
+                    <p>No more endless research — get a complete plan in minutes</p>
+                </div>
+                <div class="why-box">
+                    <div class="why-icon">📋</div>
+                    <h3>Perfectly Organized</h3>
+                    <p>Day-by-day schedule with bookings, maps & insider tips</p>
+                </div>
+                <div class="why-box">
+                    <div class="why-icon">💰</div>
+                    <h3>Smart Budget Control</h3>
+                    <p>Transparent pricing & money-saving recommendations</p>
+                </div>
+                <div class="why-box">
+                    <div class="why-icon">🌟</div>
+                    <h3>Expert Local Insights</h3>
+                    <p>Hidden gems and authentic experiences only locals know</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span>💬 REAL STORIES</span>
+                <h2>What Travelers Say</h2>
+            </div>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>“The 7-day Europe itinerary was flawless. Every detail was taken care of — we just showed up and enjoyed the magic!”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">🇫🇷</div>
+                        <div>
+                            <strong>Sarah & Michael Thompson</strong><br>
+                            <small>Paris • June 2025</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Built a custom Bali trip for our honeymoon. The private villas and surprise sunset dinner were unforgettable!”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">🇮🇩</div>
+                        <div>
+                            <strong>Priya & Arjun Sharma</strong><br>
+                            <small>Bali • March 2026</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p>“Himachal itinerary changed how we travel. The mountain views and local experiences were pure perfection.”</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">🏔️</div>
+                        <div>
+                            <strong>Rohan Kapoor</strong><br>
+                            <small>Himachal • January 2026</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="footer">
+        © 2026 Unfold Earth | Travel the world 🌎
+    </div>
+
+</body>
+</html>

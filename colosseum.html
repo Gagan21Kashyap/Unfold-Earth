@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Colosseum</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<style>
+    body{
+font-family:Arial;
+margin:0;
+background:#f5f5f5;
+color:#333;
+}
+
+.hero{
+height:60vh;
+background:url("tajmain.jpg.jpeg") center/cover;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+text-align:center;
+}
+
+.hero h1{
+font-size:60px;
+margin:0;
+}
+
+.hero p{
+font-size:20px;
+}
+
+.about{
+width:70%;
+margin:auto;
+padding:50px 0;
+text-align:center;
+}
+
+.about h2{
+font-size:32px;
+margin-bottom:20px;
+}
+
+.about p{
+line-height:1.6;
+margin-bottom:15px;
+}
+
+.gallery{
+padding:50px;
+text-align:center;
+}
+
+.gallery h2{
+margin-bottom:30px;
+}
+
+.gallery-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:15px;
+width:80%;
+margin:auto;
+}
+
+.gallery-grid img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:8px;
+}
+
+.nearby{
+padding:50px;
+background:white;
+text-align:center;
+}
+
+.places{
+display:flex;
+justify-content:center;
+gap:30px;
+margin-top:30px;
+}
+
+.card{
+width:280px;
+background:#f3f3f3;
+border-radius:8px;
+overflow:hidden;
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+}
+
+.card h3{
+margin:15px 0 10px 0;
+}
+
+.card p{
+padding:0 15px 20px 15px;
+font-size:14px;
+}
+
+.back{
+text-align:center;
+padding:40px;
+}
+
+.back a{
+text-decoration:none;
+background:#222;
+color:white;
+padding:12px 25px;
+border-radius:5px;
+}
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #ddd;
+    color:#555;
+    font-size:1.2rem;
+    background:#f8fbff;
+}
+.map{
+    padding:50px 0;
+    background:#f9f9f9;
+}
+</style>
+<section class="hero" style="background:url('colosseummain.jpg.jpeg') center/cover;">
+<h1>Colosseum</h1>
+<p>The legendary arena of ancient Rome</p>
+</section>
+
+<section class="about">
+<h2>About the Colosseum</h2>
+<p>
+The Colosseum is an ancient amphitheater located in Rome, Italy.
+Built in 80 AD, it was used for gladiator battles,
+public spectacles, and dramatic performances.
+</p>
+
+<p>
+It remains one of the most iconic symbols of the Roman Empire
+and attracts millions of visitors each year.
+</p>
+</section>
+
+<section class="gallery">
+<h2>Beauty of the Colosseum</h2>
+
+<div class="gallery-grid">
+<img src="colosseum1.jpg.jpeg">
+<img src="colosseum2.jpg.jpeg">
+<img src="colosseum3.jpg.jpeg">
+<img src="colosseum4.jpg.jpeg">
+</div>
+</section>
+
+<section class="nearby">
+<h2>Nearby Attractions</h2>
+
+<div class="places">
+
+<div class="card">
+<img src="forum.jpg.jpeg">
+<h3>Roman Forum</h3>
+<p>The historic center of ancient Roman government.</p>
+</div>
+
+<div class="card">
+<img src="pantheon.jpg.jpeg">
+<h3>Pantheon</h3>
+<p>A famous Roman temple with a massive dome.</p>
+</div>
+
+<div class="card">
+<img src="vatican.jpg.jpeg">
+<h3>Vatican City</h3>
+<p>The smallest country in the world and home of the Pope.</p>
+</div>
+
+</div>
+</section>
+<section class="map">
+    <h2 style="text-align:center; margin-bottom:20px;">Location on Map</h2>
+
+    <div style="width:80%; margin:auto;">
+        <iframe 
+            src="https://www.google.com/maps?q=Colosseum%20Rome&output=embed"
+            width="100%" 
+            height="400" 
+            style="border:0; border-radius:10px;" 
+            allowfullscreen="" 
+            loading="lazy">
+        </iframe>
+    </div>
+</section>
+<div class="back">
+<a href="grid.html">Back to Home</a>
+</div>
+<div class="footer">
+    © 2026 Unfold Earth | Travel the world 🌎
+</div>
+</body>
+</html>

@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unfold Earth - Deserts</title>
+  <style>
+
+      .headd {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 12%;
+        text-shadow: 0 0 50px black;
+      }
+
+      .nav_item {
+        list-style: none;
+        display: inline-block;
+        padding: 20px;
+        font-size: 30px;
+        text-shadow: 0 0 20px black;
+        pointer-events: auto;
+      }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+ 
+        .nav-container{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+
+        }
+        .dropdown{
+    position:relative;
+}
+.dropbtn{
+    cursor:pointer;
+    padding-bottom:20px;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:80%;
+    left:0;
+    z-index:9999;
+    background:rgba(0, 0, 0, 0.5);
+    min-width:220px;
+    border-radius:3px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12)
+}
+.dropdown-content a{
+    padding:12px;
+    display:block;
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.dropdown-content a:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: white;
+      scroll-behavior: smooth;
+    }
+
+
+    .bg-video {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+.hero {
+    height: 100vh; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+    .hero h1 {
+      font-size: 3.2rem;
+      letter-spacing: 2px;
+    }
+
+    .hero p {
+      margin-top: 10px;
+      font-size: 1.3rem;
+    }
+
+    .hero a {
+      margin-top: 20px;
+      padding: 12px 28px;
+      background: linear-gradient(45deg, #0077b6, #00b4d8);
+      border-radius: 30px;
+      text-decoration: none;
+      color: white;
+    }
+
+
+    #popular {
+      padding: 40px;
+      background: transparent;
+      text-align: center;
+    }
+
+    #popular h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 15px;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h3 {
+      color: #000000;
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    summary {
+      display: block;
+      margin: 10px auto;
+      padding: 10px;
+      width: 80%;
+      background: linear-gradient(45deg, #0077b6, #00b4d8);
+      color: white;
+      border-radius: 25px;
+      cursor: pointer;
+      text-align: center;
+      list-style: none;
+    }
+
+    .details {
+      width: 100%;
+      margin-top: 10px;
+      font-size: 14px;
+      color: #0d0c0c;
+    }
+
+
+    #experiences {
+      padding: 40px;
+    }
+
+    #experiences h2 {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-auto-rows: 150px;
+      gap: 15px;
+    }
+
+    .exp-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 15px;
+    }
+
+    .exp-card img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      top: 0;
+      left: 0;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: 0.4s;
+    }
+
+    .overlay h3 {
+      color: white;
+      font-size: 18px;
+      transform: translateY(-20px);
+      transition: 0.4s;
+    }
+
+    .exp-card:hover .overlay {
+      opacity: 1;
+    }
+
+    .exp-card:hover img {
+      transform: scale(1.1);
+      transition: 0.4s;
+    }
+
+    .exp-card:hover .overlay h3 {
+      transform: translateY(0);
+    }
+
+    .box1 {
+      grid-row: 4/6;
+      grid-column: 1/2;
+    }
+
+    .box2 {
+      grid-column: span 2;
+    }
+
+    .box3 {
+      grid-column: span 2;
+    }
+
+    .box4 {
+      grid-row: span 3;
+    }
+
+    .box5 {
+      grid-column: 3/5;
+      grid-row: span 2;
+    }
+
+    .box6 {
+      grid-column: 1/3;
+      grid-row: 2/4;
+    }
+
+    .box7 {
+      grid-column: span 2;
+    }
+
+    .box8 {
+      grid-column: 2/4;
+    }
+
+    .box9 {
+      grid-column: 4/6;
+      grid-row: 4/6;
+    }
+
+
+    .why {
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+    }
+
+    .why-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .why-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      padding: 20px;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .why-card:hover {
+      transform: translateY(-5px);
+    }
+
+
+    .requirements {
+      padding: 80px 20px;
+      text-align: center;
+      color: white;
+      font-size: 1.5rem;
+    }
+
+    .req-strip {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .req-item {
+      transition: 0.3s;
+      width: 18%;
+    }
+
+    .req-item:hover {
+      transform: translateY(-15px);
+    }
+
+    .req-item h3 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .req-item p {
+      font-size: 1.5rem;
+      text-shadow: 3px 2px black;
+    }
+
+    .req-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 10px;
+    }
+
+
+    .top-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0077b6;
+      color: white;
+      padding: 14px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 18px;
+    }
+    .nav_item {
+            list-style: none;
+            display: inline-block;
+            padding: 20px;
+            font-size: 30px;
+            justify-content: center;
+            text-shadow: 0 0 20px black;
+            pointer-events: auto;
+        }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        
+        .nav-container{
+            list-style: none;
+
+        }
+        .dropdown{
+    position:relative;
+}
+.dropbtn{
+    cursor:pointer;
+    padding-bottom:20px;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:80%;
+    left:0;
+    z-index:9999;
+    background:rgba(0, 0, 0, 0.5);
+    min-width:220px;
+    border-radius:3px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12)
+}
+.dropdown-content a{
+    padding:12px;
+    display:block;
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.dropdown-content a:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+.footer{
+    text-align:center;
+    padding:30px;
+    border-top:1px solid #ddd;
+    color:#555;
+    font-size:1.2rem;
+    background:#f8fbff;
+}
+  </style>
+</head>
+
+<body>
+        <div class="heading">
+            <nav class="nav">
+                <ul class="nav-container">
+                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+                    <div class="dropdown-content">
+                        <a href="africa.html">Africa </a>
+                        <a href="asia.html">Asia </a>
+                        <a href="america.html">America </a>
+                        <a href="europe.html">Europe </a>
+                        <a href="carribean.html">Carribean </a>
+                    </div>
+                </li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                    <div class="dropdown-content">
+                        <a href="beaches.html">Beach</a>
+                        <a href="mountains.html">Mountains</a>
+                        <a href="wildlife.html">Wildlife</a>
+                        <a href="desert.html">Desert</a>
+                        <a href="waterfall.html">Waterfall</a>
+                        <a href="volcanos.html">Volcanoes</a>
+                        <a href="monuments.html">Monuments</a>
+                    </div></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+                    <div class="dropdown-content">
+                      <a href="artgallery.html">Art Gallery</a>
+                      <a href="imagegallery.html">Image Gallery</a>
+
+                    </div></li>
+                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+                </ul>
+              </nav>
+
+    <video autoplay muted loop class="bg-video">
+      <source src="desert.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+  </section>
+  <section class="hero">
+    <h1>Explore the World's Best Deserts</h1>
+    <p>Where sand meets adventure 🌵</p>
+    <a href="#popular">Explore Now</a>
+  </section>
+
+
+  <section id="popular">
+    <h2>Popular Deserts</h2>
+    <div class="grid">
+
+      <div class="card">
+        <img src="sahara.jpg">
+        <h3>Sahara (Africa)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            World's largest hot desert, golden dunes, camel safaris, and extreme climate.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="thar.jpg">
+        <h3>Thar (India)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Sand dunes, desert festivals, camel rides, and Rajasthani culture.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="arabian.jpg">
+        <h3>Arabian Desert (UAE)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Dune bashing, luxury desert safaris, and stunning sunsets.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="gobi.jpg">
+        <h3>Gobi (Mongolia)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Cold desert, rocky landscapes, fossils, and unique wildlife.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="atacama.jpg">
+        <h3>Atacama (Chile)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Driest desert, salt flats, star gazing, and Mars-like terrain.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="kalahari.jpg">
+        <h3>Kalahari (Africa)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Red sand dunes, wildlife, and rich tribal culture.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="sonoran.jpg">
+        <h3>Sonoran (USA/Mexico)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Famous for giant cacti, hot climate, and desert biodiversity.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="mojave.jpg">
+        <h3>Mojave (USA)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Home to Death Valley, extreme heat, and desert landscapes.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="namib.jpg">
+        <h3>Namib (Namibia)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Oldest desert, huge dunes, and coastal fog scenery.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="patagorian.jpg">
+        <h3>Patagonian (Argentina)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Cold desert, windy plains, and unique wildlife.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="greatvictorian.jpg">
+        <h3>Great Victoria (Australia)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Largest desert in Australia, red sand dunes, and remote beauty.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="simpson.jpg">
+        <h3>Simpson (Australia)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Endless dunes, adventure trekking, and 4x4 expeditions.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="taklamakan.jpg">
+        <h3>Taklamakan (China)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Dangerous desert, shifting dunes, and Silk Road history.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="antarctic.jpg">
+        <h3>Antarctic Desert</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Largest cold desert, icy landscapes, and extreme conditions.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="greatbasin.jpg">
+        <h3>Great Basin (USA)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Cold desert, mountain ranges, and diverse ecosystems.
+          </div>
+        </details>
+      </div>
+
+      <div class="card">
+        <img src="chihuahloan.jpg">
+        <h3>Chihuahuan (Mexico)</h3>
+        <details>
+          <summary>View Details</summary>
+          <div class="details">
+            Rich biodiversity, desert plants, and scenic landscapes.
+          </div>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  <section id="experiences">
+    <h2>Experiences</h2>
+    <div class="exp-grid">
+      <div class="exp-card box1">
+        <img src="camel safari.jpg">
+        <div class="overlay">
+          <h3>Camel Safari 🐪</h3>
+        </div>
+      </div>
+      <div class="exp-card box2">
+        <img src="dune.jpg">
+        <div class="overlay">
+          <h3>Dune Bashing 🚙</h3>
+        </div>
+      </div>
+      <div class="exp-card box3">
+        <img src="sandboarding.jpg">
+        <div class="overlay">
+          <h3>Sandboarding 🏂</h3>
+        </div>
+      </div>
+      <div class="exp-card box4">
+        <img src="atv ride.jpg">
+        <div class="overlay">
+          <h3>ATV Ride 🚵</h3>
+        </div>
+      </div>
+      <div class="exp-card box5">
+        <img src="desert camping.jpg">
+        <div class="overlay">
+          <h3>Desert Camping 🏕️</h3>
+        </div>
+      </div>
+      <div class="exp-card box6">
+        <img src="stargazing.jpg">
+        <div class="overlay">
+          <h3>Stargazing ✨</h3>
+        </div>
+      </div>
+      <div class="exp-card box7">
+        <img src="sunset.jpg">
+        <div class="overlay">
+          <h3>Sunset 🌅</h3>
+        </div>
+      </div>
+      <div class="exp-card box8">
+        <img src="oasis visit.jpg">
+        <div class="overlay">
+          <h3>Oasis Visit 🌴</h3>
+        </div>
+      </div>
+      <div class="exp-card box9">
+        <img src="festival.jpg">
+        <div class="overlay">
+          <h3>Desert Festival 🎉</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="why">
+    <h2>Why Choose Us?</h2>
+    <div class="why-container">
+      <div class="why-card">
+        <h3>🌍 Global Coverage</h3>
+        <p>Explore deserts from all over the world.</p>
+      </div>
+      <div class="why-card">
+        <h3>🧭 Curated Destinations</h3>
+        <p>Carefully selected deserts for the best experience.</p>
+      </div>
+      <div class="why-card">
+        <h3>📸 Visual Experience</h3>
+        <p>Stunning visuals that inspire travel.</p>
+      </div>
+      <div class="why-card">
+        <h3>🌵 For Every Explorer</h3>
+        <p>Options for all adventure lovers.</p>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="requirements">
+    <h2>Before You Visit Desert</h2>
+    <div class="req-strip">
+      <div class="req-item">
+        <h3>🧴</h3>
+        <img src="essential.jpg">
+        <p>Essentials</p>
+      </div>
+      <div class="req-item">
+        <h3>🎒</h3>
+        <img src="packing.jpg">
+        <p>Packing</p>
+      </div>
+      <div class="req-item">
+        <h3>🌤</h3>
+        <img src="dweather.webp">
+        <p>Weather</p>
+      </div>
+      <div class="req-item">
+        <h3>💧</h3>
+        <img src="hydration.jpg">
+        <p>Hydration</p>
+      </div>
+    </div>
+  </section>
+<div class="footer">
+    © 2026 Unfold Earth | Travel the world 🌎
+</div>
+
+  <a href="#" class="top-btn">↑</a>
+
+</body>
+
+</html>

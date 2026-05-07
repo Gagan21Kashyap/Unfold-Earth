@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>imagegallery</title>
+    <style>
+
+      .headd {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 12%;
+        text-shadow: 0 0 50px black;
+      }
+
+      .nav_item {
+        list-style: none;
+        display: inline-block;
+        padding: 20px;
+        font-size: 30px;
+        text-shadow: 0 0 20px black;
+        pointer-events: auto;
+      }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+ 
+        .nav-container{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+
+        }
+        .dropdown{
+    position:relative;
+}
+.dropbtn{
+    cursor:pointer;
+    padding-bottom:20px;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:80%;
+    left:0;
+    z-index:9999;
+    background:rgba(0, 0, 0, 0.5);
+    min-width:220px;
+    border-radius:3px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12)
+}
+.dropdown-content a{
+    padding:12px;
+    display:block;
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.dropdown-content a:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family: Arial, sans-serif;
+        }
+        body{
+            background:#f5f7fa;
+        }
+        .grid{
+            display:grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap:20px;
+            width:85%;
+            margin:40px auto;
+        }
+        .cell{
+            position:relative;
+            height:200px;
+            border-radius:15px;
+            overflow:hidden;
+            cursor:pointer;
+            box-shadow:0 4px 12px rgba(0,0,0,0.1);
+            transition:transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cell img{
+            width:100%;
+            height:100%;
+            object-fit:cover;
+            transition:transform 0.5s ease;
+        }
+        .cell::after{
+            content:"";
+            position:absolute;
+            bottom:0;
+            left:0;
+            width:100%;
+            height:60%;
+            background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+        }
+        .cell h3{
+            position:absolute;
+            top:12px;
+            left:12px;
+            color:#fff;
+            background:rgba(0,0,0,0.5);
+            padding:6px 12px;
+            border-radius:8px;
+            font-size:15px;
+            font-weight:500;
+            z-index:2;
+        }
+        .cell:hover{
+            transform:translateY(-8px);
+            box-shadow:0 10px 25px rgba(0,0,0,0.2);
+        }
+        .cell:hover img{
+            transform:scale(1.15);
+        }
+
+.footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #ddd;
+color:#555;
+font-size:1.2rem;
+background:#f8fbff;
+margin-top:40px;
+}
+        
+    </style>
+</head>
+<body> 
+        <div class="heading">
+            <nav class="nav">
+                <ul class="nav-container">
+                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+                    <div class="dropdown-content">
+                        <a href="africa.html">Africa </a>
+                        <a href="asia.html">Asia </a>
+                        <a href="america.html">America </a>
+                        <a href="europe.html">Europe </a>
+                        <a href="carribean.html">Carribean </a>
+                    </div>
+                </li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                    <div class="dropdown-content">
+                        <a href="beaches.html">Beach</a>
+                        <a href="mountains.html">Mountains</a>
+                        <a href="wildlife.html">Wildlife</a>
+                        <a href="desert.html">Desert</a>
+                        <a href="waterfall.html">Waterfall</a>
+                        <a href="volcanos.html">Volcanoes</a>
+                        <a href="monuments.html">Monuments</a>
+                    </div></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+                    <div class="dropdown-content">
+                      <a href="artgallery.html">Art Gallery</a>
+                      <a href="imagegallery.html">Image Gallery</a>
+
+                    </div></li>
+                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+                </ul>
+              </nav>
+
+<div class="grid">
+
+<div class="cell"><img src="afghanistan.jpg"><h3>Afghanistan</h3></div>
+<div class="cell"><img src="albania.jpg"><h3>Albania</h3></div>
+<div class="cell"><img src="algeria.jpg"><h3>Algeria</h3></div>
+<div class="cell"><img src="andorra.jpg"><h3>Andorra</h3></div>
+<div class="cell"><img src="angola.jpg"><h3>Angola</h3></div>
+<div class="cell"><img src="antigua.jpg"><h3>Antigua and Barbuda</h3></div>
+<div class="cell"><img src="argentina.jpg"><h3>Argentina</h3></div>
+<div class="cell"><img src="armenia.jpg"><h3>Armenia</h3></div>
+<div class="cell"><img src="Australia.jpg"><h3>Australia</h3></div>
+<div class="cell"><img src="austria.jpg"><h3>Austria</h3></div>
+<div class="cell"><img src="azarbaijan.jpg"><h3>Azerbaijan</h3></div>
+
+<div class="cell"><img src="bahamas.jpg"><h3>Bahamas</h3></div>
+<div class="cell"><img src="bahrain.jpg"><h3>Bahrain</h3></div>
+<div class="cell"><img src="bangladesh.jpg"><h3>Bangladesh</h3></div>
+<div class="cell"><img src="barbados.jpg"><h3>Barbados</h3></div>
+<div class="cell"><img src="belarus.jpg"><h3>Belarus</h3></div>
+<div class="cell"><img src="belgium.jpg"><h3>Belgium</h3></div>
+<div class="cell"><img src="belize.jpg"><h3>Belize</h3></div>
+<div class="cell"><img src="benin.jpg"><h3>Benin</h3></div>
+<div class="cell"><img src="bhutan.jpg"><h3>Bhutan</h3></div>
+<div class="cell"><img src="bolivia.jpg"><h3>Bolivia</h3></div>
+<div class="cell"><img src="bosnia.jpg"><h3>Bosnia and Herzegovina</h3></div>
+<div class="cell"><img src="botswana.jpg"><h3>Botswana</h3></div>
+<div class="cell"><img src="brazil.jpg"><h3>Brazil</h3></div>
+<div class="cell"><img src="brunei.jpg"><h3>Brunei</h3></div>
+<div class="cell"><img src="bulgaria.jpg"><h3>Bulgaria</h3></div>
+<div class="cell"><img src="burkinafaso.jpg"><h3>Burkina Faso</h3></div>
+<div class="cell"><img src="burundi.jpg"><h3>Burundi</h3></div>
+
+<div class="cell"><img src="cabo verde.jpg"><h3>Cabo Verde</h3></div>
+<div class="cell"><img src="cambodia.jpg"><h3>Cambodia</h3></div>
+<div class="cell"><img src="cameroun.jpg"><h3>Cameroon</h3></div>
+<div class="cell"><img src="canada.jpg"><h3>Canada</h3></div>
+<div class="cell"><img src="central african republic.jpg"><h3>Central African Republic</h3></div>
+<div class="cell"><img src="chad.jpg"><h3>Chad</h3></div>
+<div class="cell"><img src="chile.jpg"><h3>Chile</h3></div>
+<div class="cell"><img src="china.jpg"><h3>China</h3></div>
+<div class="cell"><img src="colombia.jpg"><h3>Colombia</h3></div>
+<div class="cell"><img src="comoros.jpg"><h3>Comoros</h3></div>
+<div class="cell"><img src="congo.jpg"><h3>Congo</h3></div>
+<div class="cell"><img src="costa rica.jpg"><h3>Costa Rica</h3></div>
+<div class="cell"><img src="croatia.jpg"><h3>Croatia</h3></div>
+<div class="cell"><img src="cuba.jpg"><h3>Cuba</h3></div>
+<div class="cell"><img src="cyprus.jpg"><h3>Cyprus</h3></div>
+<div class="cell"><img src="czech republic.jpg"><h3>Czech Republic</h3></div>
+
+<div class="cell"><img src="denmark.jpg"><h3>Denmark</h3></div>
+<div class="cell"><img src="djibouti.jpg"><h3>Djibouti</h3></div>
+<div class="cell"><img src="dominica.jpg"><h3>Dominica</h3></div>
+<div class="cell"><img src="dominican republic.jpg"><h3>Dominican Republic</h3></div>
+
+<div class="cell"><img src="ecuador.jpg"><h3>Ecuador</h3></div>
+<div class="cell"><img src="egypt.jpg"><h3>Egypt</h3></div>
+<div class="cell"><img src="el salvador.jpg"><h3>El Salvador</h3></div>
+<div class="cell"><img src="equatorial guinea.jpg"><h3>Equatorial Guinea</h3></div>
+<div class="cell"><img src="eritrea.jpg"><h3>Eritrea</h3></div>
+<div class="cell"><img src="estonia.jpg"><h3>Estonia</h3></div>
+<div class="cell"><img src="eswatini.jpg"><h3>Eswatini</h3></div>
+<div class="cell"><img src="ethopia.jpg"><h3>Ethiopia</h3></div>
+
+<div class="cell"><img src="fiji.jpg"><h3>Fiji</h3></div>
+<div class="cell"><img src="finland.jpg"><h3>Finland</h3></div>
+<div class="cell"><img src="france.jpg"><h3>France</h3></div>
+
+<div class="cell"><img src="gabon.jpg"><h3>Gabon</h3></div>
+<div class="cell"><img src="gambia.jpg"><h3>Gambia</h3></div>
+<div class="cell"><img src="georgia.jpg"><h3>Georgia</h3></div>
+<div class="cell"><img src="germany.jpg"><h3>Germany</h3></div>
+<div class="cell"><img src="ghana.jpg"><h3>Ghana</h3></div>
+<div class="cell"><img src="greece.jpg"><h3>Greece</h3></div>
+<div class="cell"><img src="grenada.jpg"><h3>Grenada</h3></div>
+<div class="cell"><img src="guatemala.jpg"><h3>Guatemala</h3></div>
+<div class="cell"><img src="guinea.jpg"><h3>Guinea</h3></div>
+<div class="cell"><img src="guinea bissau.jpg"><h3>Guinea-Bissau</h3></div>
+<div class="cell"><img src="guyana.jpg"><h3>Guyana</h3></div>
+
+<div class="cell"><img src="haiti.jpg"><h3>Haiti</h3></div>
+<div class="cell"><img src="honduras.jpg"><h3>Honduras</h3></div>
+<div class="cell"><img src="hungary.jpg"><h3>Hungary</h3></div>
+
+<div class="cell"><img src="iceland.jpg"><h3>Iceland</h3></div>
+<div class="cell"><img src="india.jpg"><h3>India</h3></div>
+<div class="cell"><img src="indonesia.jpg"><h3>Indonesia</h3></div>
+<div class="cell"><img src="iran.jpg"><h3>Iran</h3></div>
+<div class="cell"><img src="iraq.jpg"><h3>Iraq</h3></div>
+<div class="cell"><img src="ireland.jpg"><h3>Ireland</h3></div>
+<div class="cell"><img src="israel.jpg"><h3>Israel</h3></div>
+<div class="cell"><img src="italy.jpg"><h3>Italy</h3></div>
+
+<div class="cell"><img src="jamaica.jpg"><h3>Jamaica</h3></div>
+<div class="cell"><img src="japan.jpg"><h3>Japan</h3></div>
+<div class="cell"><img src="jordan.jpg"><h3>Jordan</h3></div>
+
+<div class="cell"><img src="kazakhstan.jpg"><h3>Kazakhstan</h3></div>
+<div class="cell"><img src="kenya.jpg"><h3>Kenya</h3></div>
+<div class="cell"><img src="kiribati.jpg"><h3>Kiribati</h3></div>
+<div class="cell"><img src="southkorea.jpg"><h3>South Korea</h3></div>
+<div class="cell"><img src="kuwait.jpg"><h3>Kuwait</h3></div>
+<div class="cell"><img src="kyrgyzstan.jpg"><h3>Kyrgyzstan</h3></div>
+
+<div class="cell"><img src="laos.jpg"><h3>Laos</h3></div>
+<div class="cell"><img src="lativa.jpg"><h3>Latvia</h3></div>
+<div class="cell"><img src="lebanon.jpg"><h3>Lebanon</h3></div>
+<div class="cell"><img src="lesotho.jpg"><h3>Lesotho</h3></div>
+<div class="cell"><img src="liberia.jpg"><h3>Liberia</h3></div>
+<div class="cell"><img src="libya.jpg"><h3>Libya</h3></div>
+<div class="cell"><img src="lichtenstein.jpg"><h3>Liechtenstein</h3></div>
+<div class="cell"><img src="lithuania.jpg"><h3>Lithuania</h3></div>
+<div class="cell"><img src="luxembourg.jpg"><h3>Luxembourg</h3></div>
+
+<div class="cell"><img src="madagascar.jpg"><h3>Madagascar</h3></div>
+<div class="cell"><img src="malawi.jpg"><h3>Malawi</h3></div>
+<div class="cell"><img src="malaysia.jpg"><h3>Malaysia</h3></div>
+<div class="cell"><img src="maldives.jpg"><h3>Maldives</h3></div>
+<div class="cell"><img src="mali.jpg"><h3>Mali</h3></div>
+<div class="cell"><img src="malta.jpg"><h3>Malta</h3></div>
+<div class="cell"><img src="marshal.jpg"><h3>Marshall Islands</h3></div>
+<div class="cell"><img src="mauritanie.jpg"><h3>Mauritania</h3></div>
+<div class="cell"><img src="mauritious.jpg"><h3>Mauritius</h3></div>
+<div class="cell"><img src="mexico.jpg"><h3>Mexico</h3></div>
+<div class="cell"><img src="micronesia.jpg"><h3>Micronesia</h3></div>
+<div class="cell"><img src="moldova.jpg"><h3>Moldova</h3></div>
+<div class="cell"><img src="monaco.jpg"><h3>Monaco</h3></div>
+<div class="cell"><img src="mongolia.jpg"><h3>Mongolia</h3></div>
+<div class="cell"><img src="montenegro.jpg"><h3>Montenegro</h3></div>
+<div class="cell"><img src="morocco.jpg"><h3>Morocco</h3></div>
+<div class="cell"><img src="mozambique.jpg"><h3>Mozambique</h3></div>
+<div class="cell"><img src="myanmar.jpg"><h3>Myanmar</h3></div>
+
+<div class="cell"><img src="namibia.jpg"><h3>Namibia</h3></div>
+<div class="cell"><img src="nauru.jpg"><h3>Nauru</h3></div>
+<div class="cell"><img src="nepal.jpg"><h3>Nepal</h3></div>
+<div class="cell"><img src="netherlands.jpg"><h3>Netherlands</h3></div>
+<div class="cell"><img src="newzeland.jpg"><h3>New Zealand</h3></div>
+<div class="cell"><img src="nicaragua.jpg"><h3>Nicaragua</h3></div>
+<div class="cell"><img src="niger.jpg"><h3>Niger</h3></div>
+<div class="cell"><img src="nigeria.jpg"><h3>Nigeria</h3></div>
+<div class="cell"><img src="northkorea.jpg"><h3>North Korea</h3></div>
+<div class="cell"><img src="northmacedonia.jpg"><h3>North Macedonia</h3></div>
+<div class="cell"><img src="norway.jpg"><h3>Norway</h3></div>
+
+<div class="cell"><img src="oman.jpg"><h3>Oman</h3></div>
+
+<div class="cell"><img src="pakistan.jpg"><h3>Pakistan</h3></div>
+<div class="cell"><img src="palau.jpg"><h3>Palau</h3></div>
+<div class="cell"><img src="panama.jpg"><h3>Panama</h3></div>
+<div class="cell"><img src="papuanewguinea.jpg"><h3>Papua New Guinea</h3></div>
+<div class="cell"><img src="paraguay.jpg"><h3>Paraguay</h3></div>
+<div class="cell"><img src="peru.jpg"><h3>Peru</h3></div>
+<div class="cell"><img src="philippines.jpg"><h3>Philippines</h3></div>
+<div class="cell"><img src="poland.jpg"><h3>Poland</h3></div>
+<div class="cell"><img src="portugal.jpg"><h3>Portugal</h3></div>
+
+<div class="cell"><img src="qatar.jpg"><h3>Qatar</h3></div>
+
+<div class="cell"><img src="romania.jpg"><h3>Romania</h3></div>
+<div class="cell"><img src="russia.jpg"><h3>Russia</h3></div>
+<div class="cell"><img src="rawanda.jpg"><h3>Rwanda</h3></div>
+
+<div class="cell"><img src="saintkitts.jpg"><h3>Saint Kitts and Nevis</h3></div>
+<div class="cell"><img src="saintlucia.jpg"><h3>Saint Lucia</h3></div>
+<div class="cell"><img src="saintvincent.jpg"><h3>Saint Vincent and the Grenadines</h3></div>
+<div class="cell"><img src="samoa.jpg"><h3>Samoa</h3></div>
+<div class="cell"><img src="sanmarino.jpg"><h3>San Marino</h3></div>
+<div class="cell"><img src="saotome.jpg"><h3>Sao Tome and Principe</h3></div>
+<div class="cell"><img src="saudiarabia.jpg"><h3>Saudi Arabia</h3></div>
+<div class="cell"><img src="senegal.jpg"><h3>Senegal</h3></div>
+<div class="cell"><img src="serbia.jpg"><h3>Serbia</h3></div>
+<div class="cell"><img src="seychelles.jpg"><h3>Seychelles</h3></div>
+<div class="cell"><img src="sierraleone.jpg"><h3>Sierra Leone</h3></div>
+<div class="cell"><img src="singapore.jpg"><h3>Singapore</h3></div>
+<div class="cell"><img src="slovakia.jpg"><h3>Slovakia</h3></div>
+<div class="cell"><img src="slovenia.jpg"><h3>Slovenia</h3></div>
+<div class="cell"><img src="solomon.jpg"><h3>Solomon Islands</h3></div>
+<div class="cell"><img src="somalia.jpg"><h3>Somalia</h3></div>
+<div class="cell"><img src="southafrica.jpg"><h3>South Africa</h3></div>
+<div class="cell"><img src="southsudan.jpg"><h3>South Sudan</h3></div>
+<div class="cell"><img src="spain.jpg"><h3>Spain</h3></div>
+<div class="cell"><img src="srilanka.jpg"><h3>Sri Lanka</h3></div>
+<div class="cell"><img src="sudan.jpg"><h3>Sudan</h3></div>
+<div class="cell"><img src="suriname.jpg"><h3>Suriname</h3></div>
+<div class="cell"><img src="sweden.jpg"><h3>Sweden</h3></div>
+<div class="cell"><img src="switzerland.jpg"><h3>Switzerland</h3></div>
+<div class="cell"><img src="syria.jpg"><h3>Syria</h3></div>
+
+<div class="cell"><img src="tajikistan.jpg"><h3>Tajikistan</h3></div>
+<div class="cell"><img src="tanzania.jpg"><h3>Tanzania</h3></div>
+<div class="cell"><img src="thiland.jpg"><h3>Thailand</h3></div>
+<div class="cell"><img src="timor.jpg"><h3>Timor-Leste</h3></div>
+<div class="cell"><img src="togo.jpg"><h3>Togo</h3></div>
+<div class="cell"><img src="tonga.jpg"><h3>Tonga</h3></div>
+<div class="cell"><img src="trinidad.jpg"><h3>Trinidad and Tobago</h3></div>
+<div class="cell"><img src="tunisia.jpg"><h3>Tunisia</h3></div>
+<div class="cell"><img src="turkey.jpg"><h3>Turkey</h3></div>
+<div class="cell"><img src="turkmenistan.jpg"><h3>Turkmenistan</h3></div>
+<div class="cell"><img src="tuvalu.jpg"><h3>Tuvalu</h3></div>
+
+<div class="cell"><img src="uganda.jpg"><h3>Uganda</h3></div>
+<div class="cell"><img src="ukraine.jpg"><h3>Ukraine</h3></div>
+<div class="cell"><img src="uae.jpg"><h3>United Arab Emirates</h3></div>
+<div class="cell"><img src="uk.jpg"><h3>United Kingdom</h3></div>
+<div class="cell"><img src="usa.jpg"><h3>United States</h3></div>
+<div class="cell"><img src="uruguay.jpg"><h3>Uruguay</h3></div>
+<div class="cell"><img src="uzbekistan.jpg"><h3>Uzbekistan</h3></div>
+
+<div class="cell"><img src="vanuatu.jpg"><h3>Vanuatu</h3></div>
+<div class="cell"><img src="vatican.jpg"><h3>Vatican City</h3></div>
+
+<div class="cell"><img src="yemen.jpg"><h3>Yemen</h3></div>
+
+<div class="cell"><img src="zambia.jpg"><h3>Zambia</h3></div>
+<div class="cell"><img src="zimbabwe.jpg"><h3>Zimbabwe</h3></div>
+
+</div>
+<div class="footer">
+    © 2026 Unfold Earth | Travel the world 🌎
+</div>
+</body>
+</html>

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unfold Earth - Wildlife</title>
+<style>
+
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      .headd {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        margin-top: 12%;
+        text-shadow: 0 0 50px black;
+      }
+
+      .nav_item {
+        list-style: none;
+        display: inline-block;
+        padding: 20px;
+        font-size: 30px;
+        text-shadow: 0 0 20px black;
+        pointer-events: auto;
+      }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .nav {
+            justify-content: center;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+ 
+        .nav-container{
+            list-style: none;
+            display: flex;
+            justify-content: center;
+
+        }
+        .dropdown{
+    position:relative;
+}
+.dropbtn{
+    cursor:pointer;
+    padding-bottom:20px;
+}
+.dropdown-content{
+    display:none;
+    position:absolute;
+    top:80%;
+    left:0;
+    z-index:9999;
+    background:rgba(0, 0, 0, 0.5);
+    min-width:220px;
+    border-radius:3px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.12)
+}
+.dropdown-content a{
+    padding:12px;
+    display:block;
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid white;
+    font-size: 16px;
+    font-weight: 600;
+}
+.dropdown-content a:hover{
+    background:rgba(0, 0, 0, 0.5);
+}
+.dropdown:hover .dropdown-content{
+    display:block;
+}
+
+  * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: -1;
+  pointer-events: none;
+}
+
+
+section {
+  padding: 80px 10%;
+  text-align: center;
+}
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.hero h1 {
+  font-size: 3.2rem;
+  letter-spacing: 2px;
+}
+.hero p {
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+.hero a {
+  margin-top: 20px;
+  padding: 12px 28px;
+  background: linear-gradient(45deg,#0077b6,#00b4d8);
+  border-radius: 30px;
+  text-decoration: none;
+  color: white;
+}
+
+
+#popular {
+  padding: 40px;
+  background: transparent;
+  text-align: center;
+}
+#popular h2 {
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 25px;
+}
+.card {
+  background: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  padding: 15px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card h3{
+  color:#000000;
+}
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+summary {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  width: 80%;
+  background: linear-gradient(45deg,#0077b6,#00b4d8);
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  text-align: center;
+  list-style: none;
+}
+.details {
+  width:100%;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #0d0c0c;
+}
+
+
+#experiences {
+  padding: 40px;
+}
+#experiences h2 {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: 150px;
+  gap: 15px;
+}
+.exp-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+.exp-card img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: 0.4s;
+}
+.overlay h3 {
+  color: white;
+  font-size: 18px;
+  transform: translateY(-20px);
+  transition: 0.4s;
+}
+.exp-card:hover .overlay {
+  opacity: 1;
+}
+.exp-card:hover img {
+  transform: scale(1.1);
+  transition: 0.4s;
+}
+.exp-card:hover .overlay h3 {
+  transform: translateY(0);
+}
+
+.box1 {
+  grid-row: 4/6;
+  grid-column: 1/2;
+}
+.box2 {
+  grid-column: span 2;
+}
+.box3 {
+  grid-column: span 2;
+}
+.box4 {
+  grid-row: span 3;
+}
+.box5 {
+  grid-column: 3/5;
+  grid-row: span 2;
+}
+.box6 {
+  grid-column: 1/3;
+  grid-row: 2/4;
+}
+.box7 {
+  grid-column: span 2;
+}
+.box8 {
+  grid-column: 2/4;
+}
+.box9 {
+  grid-column: 4/6;
+  grid-row: 4/6;
+}
+
+
+.why {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+}
+.why-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 40px;
+}
+.why-card {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+.why-card:hover {
+  transform: translateY(-5px);
+}
+
+
+.requirements {
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+}
+.req-strip {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+}
+.req-item {
+  transition: 0.3s;
+  width: 18%;
+}
+.req-item:hover {
+  transform: translateY(-15px);
+}
+.req-item h3 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+.req-item p {
+  font-size: 1.5rem;
+  text-shadow: 3px 2px black;
+}
+.req-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+
+
+
+
+.footer{
+text-align:center;
+padding:30px;
+border-top:1px solid #ddd;
+color:#555;
+font-size:1.2rem;
+background:#f8fbff;
+margin-top:40px;
+}
+
+.top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #0077b6;
+  color: white;
+  padding: 14px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+</style>
+
+</head>
+<body>
+
+         <nav class="nav">
+                <ul class="nav-container">
+                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+                    <div class="dropdown-content">
+                        <a href="africa.html">Africa </a>
+                        <a href="asia.html">Asia </a>
+                        <a href="america.html">America </a>
+                        <a href="europe.html">Europe </a>
+                        <a href="carribean.html">Carribean </a>
+                    </div>
+                </li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                    <div class="dropdown-content">
+                        <a href="beaches.html">Beach</a>
+                        <a href="mountains.html">Mountains</a>
+                        <a href="wildlife.html">Wildlife</a>
+                        <a href="desert.html">Desert</a>
+                        <a href="waterfall.html">Waterfall</a>
+                        <a href="volcanos.html">Volcanoes</a>
+                        <a href="monuments.html">Monuments</a>
+                    </div></li>
+                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+                    <div class="dropdown-content">
+                      <a href="artgallery.html">Art Gallery</a>
+                      <a href="imagegallery.html">Image Gallery</a>
+
+                    </div></li>
+                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+                </ul>
+              </nav>
+
+
+<video autoplay muted loop class="bg-video">
+  <source src="wildlife.mp4" type="video/mp4">
+</video>
+<div class="overlay"></div>
+
+<section class="hero">
+<h1>Explore the World's Best Wildlife</h1>
+<p>Where nature meets the wild 🐾</p>
+<a href="#popular">Explore Now</a>
+</section>
+
+
+<section id="popular">
+  <h2>Popular Wildlife Destinations</h2>
+  <div class="grid">
+
+    <div class="card">
+      <img src="jimcorbet.jpg">
+      <h3>Jim Corbett (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Famous for Bengal tigers, safaris, and dense forests.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="ranthambore.jpg">
+      <h3>Ranthambore (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Tiger reserve with ancient ruins and rich wildlife.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="kaziranga.jpg">
+      <h3>Kaziranga (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Home to one-horned rhinoceros and diverse species.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="sunderbams.jpg">
+      <h3>Sundarbans (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Mangrove forest, Royal Bengal tigers, and river safaris.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="kanha.jpg">
+      <h3>Kanha (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Inspiration for Jungle Book, rich flora and fauna.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="bandipur.jpg">
+      <h3>Bandipur (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Elephants, deer, and lush forest ecosystem.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="gir.jpg">
+      <h3>Gir (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Only home of Asiatic lions in the world.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="periyar.jpg">
+      <h3>Periyar (India)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Lake safaris, elephants, and scenic beauty.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="yellowstone.jpg">
+      <h3>Yellowstone (USA)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Geysers, wolves, bison, and diverse wildlife.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="serengeti.jpg">
+      <h3>Serengeti (Africa)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Great migration, lions, and vast savannas.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="kruger.jpg">
+      <h3>Kruger (South Africa)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Big Five animals and luxury safaris.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="amazon.jpg">
+      <h3>Amazon Rainforest</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">World’s largest rainforest with unmatched biodiversity.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="galapagos.jpg">
+      <h3>Galapagos (Ecuador)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Unique species, turtles, and marine life.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="borneo.jpg">
+      <h3>Borneo (Malaysia)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Orangutans, rainforests, and exotic wildlife.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="madagascar.jpg">
+      <h3>Madagascar</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Unique wildlife like lemurs and rare species.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="banff.jpg">
+      <h3>Banff (Canada)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Mountains, bears, and scenic wildlife views.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="pantanal.jpg">
+      <h3>Pantanal (Brazil)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Best place to spot jaguars and wetlands wildlife.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="tasmania.jpg">
+      <h3>Tasmania (Australia)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Wild landscapes and unique Australian animals.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="fiordland.jpg">
+      <h3>Fiordland (New Zealand)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Rare birds, fjords, and untouched nature.</div>
+      </details>
+    </div>
+
+    <div class="card">
+      <img src="congo.jpg">
+      <h3>Congo Rainforest (Africa)</h3>
+      <details>
+        <summary>View Details</summary>
+        <div class="details">Gorillas, dense forests, and rich biodiversity.</div>
+      </details>
+    </div>
+
+  </div>
+</section>
+
+
+
+<section id="experiences">
+  <h2>Experiences</h2>
+  <div class="exp-grid">
+    <div class="exp-card box1">
+      <img src="safari.jpg">
+      <div class="overlay"><h3>Safari 🚙</h3></div>
+    </div>
+    <div class="exp-card box2">
+      <img src="bird watching.jpg">
+      <div class="overlay"><h3>Bird Watching 🐦</h3></div>
+    </div>
+    <div class="exp-card box3">
+      <img src="trekking.jpg">
+      <div class="overlay"><h3>Jungle Trekking 🌿</h3></div>
+    </div>
+    <div class="exp-card box4">
+      <img src="photography.jpg">
+      <div class="overlay"><h3>Wildlife Photography 📸</h3></div>
+    </div>
+    <div class="exp-card box5">
+      <img src="camping.jpg">
+      <div class="overlay"><h3>Forest Camping 🏕️</h3></div>
+    </div>
+    <div class="exp-card box6">
+      <img src="river safari.jpg">
+      <div class="overlay"><h3>River Safari 🚤</h3></div>
+    </div>
+    <div class="exp-card box7">
+      <img src="night safari.jpg">
+      <div class="overlay"><h3>Night Safari 🌙</h3></div>
+    </div>
+    <div class="exp-card box8">
+      <img src="natural trails.jpg">
+      <div class="overlay"><h3>Nature Trails 🌳</h3></div>
+    </div>
+    <div class="exp-card box9">
+      <img src="eco tours.jpg">
+      <div class="overlay"><h3>Eco Tours 🌍</h3></div>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="why">
+  <h2>Why Choose Us?</h2>
+  <div class="why-container">
+    <div class="why-card">
+      <h3>🌍 Global Coverage</h3>
+      <p>Explore wildlife across the globe.</p>
+    </div>
+    <div class="why-card">
+      <h3>🧭 Curated Destinations</h3>
+      <p>Best wildlife spots carefully selected.</p>
+    </div>
+    <div class="why-card">
+      <h3>📸 Visual Experience</h3>
+      <p>Capture stunning wildlife moments.</p>
+    </div>
+    <div class="why-card">
+      <h3>🐾 For Every Explorer</h3>
+      <p>Perfect for nature and animal lovers.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="requirements">
+  <h2>Before You Visit Wildlife</h2>
+  <div class="req-strip">
+    <div class="req-item">
+      <h3>🎒</h3>
+      <img src="essentials jungle.jpg">
+      <p>Essentials</p>
+    </div>
+    <div class="req-item">
+      <h3>🛟</h3>
+      <img src="wsafety.jpg.jpeg">
+      <p>Safety</p>
+    </div>
+    <div class="req-item">
+      <h3>🥾</h3>
+      <img src="gear.jpg">
+      <p>Gear</p>
+    </div>
+    <div class="req-item">
+      <h3>🌦</h3>
+      <img src="wweather.png">
+      <p>Weather</p>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+    © 2026 Unfold Earth | Travel the world 🌎
+</div>
+
+<a href="#" class="top-btn">↑</a>
+
+</body>
+</html>
