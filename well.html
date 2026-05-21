@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unfold Earth • Wellness & Relaxation</title>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    .nav_item {
+      list-style: none;
+      display: inline-block;
+      padding: 20px;
+      font-size: 30px;
+      text-shadow: 0 0 20px black;
+      pointer-events: auto;
+    }
+
+    .nav_item a {
+      text-decoration: none;
+      color: white;
+    }
+
+    .nav {
+      justify-content: center;
+    }
+
+    .nav-container {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      background-color: #000000dc;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropbtn {
+      cursor: pointer;
+      padding-bottom: 20px;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 80%;
+      left: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.448);
+      min-width: 220px;
+      border-radius: 3px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12)
+    }
+
+    .dropdown-content a {
+      padding: 12px;
+      display: block;
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: 1px solid white;
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    .dropdown-content a:hover {
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+        header {
+            background: white;
+            padding: 25px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.3rem;
+            color: #2c5f2d;
+        }
+
+        .hero {
+            height: 75vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('relaxation.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            position: relative;
+            height: 100vh;
+        }
+
+        .section{
+            background-color: white;
+        }
+        .hero-content {
+            max-width: 720px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.1rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.35rem;
+        }
+
+        .section {
+            padding: 110px 8% 90px;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.9rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: #1f3a2b;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 1.2rem;
+            max-width: 680px;
+            margin: 0 auto 70px;
+        }
+        .destinations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .dest-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.4s;
+        }
+
+        .dest-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .dest-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+        }
+
+        .dest-info {
+            padding: 25px;
+            background: white;
+        }
+
+        .dest-info h3 {
+            font-size: 1.65rem;
+            margin-bottom: 8px;
+        }
+
+        .dest-info p {
+            color: #555;
+            font-size: 1.05rem;
+        }
+        .types {
+            display: flex;
+            gap: 25px;
+            overflow-x: auto;
+            padding-bottom: 30px;
+            scrollbar-width: none;
+        }
+
+        .types::-webkit-scrollbar {
+            display: none;
+        }
+
+        .type-card {
+            min-width: 240px;
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .type-card img {
+            width: 100%;
+            height: 170px;
+            object-fit: cover;
+        }
+
+        .type-card h4 {
+            padding: 18px 10px;
+            font-size: 1.15rem;
+        }
+
+        .experiences {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+            gap: 30px;
+        }
+
+        .exp-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .exp-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+
+        .exp-info {
+            padding: 25px;
+            background: white;
+        }
+
+        .exp-info .duration {
+            color: #2c5f2d;
+            font-weight: 600;
+            font-size: 0.98rem;
+        }
+
+        footer {
+            background: #1f3a2b;
+            color: #ddd;
+            text-align: center;
+            padding: 90px 8% 50px;
+        }
+
+        .footer-text {
+            max-width: 720px;
+            margin: 0 auto 20px;
+            font-size: 1.15rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="heading">
+    <nav class="nav">
+      <ul class="nav-container">
+        <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+        <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+          <div class="dropdown-content">
+            <a href="africa.html">Africa </a>
+            <a href="asia.html">Asia </a>
+            <a href="america.html">America </a>
+            <a href="europe.html">Europe </a>
+            <a href="carribean.html">Carribean </a>
+          </div>
+        </li>
+        <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+          <div class="dropdown-content">
+            <a href="beaches.html">Beach</a>
+            <a href="mountains.html">Mountains</a>
+            <a href="wildlife.html">Wildlife</a>
+            <a href="desert.html">Desert</a>
+            <a href="waterfall.html">Waterfall</a>
+            <a href="volcanos.html">Volcanoes</a>
+            <a href="monuments.html">Monuments</a>
+          </div>
+        </li>
+        <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
+          <div class="dropdown-content">
+            <a href="artgallery.html">Art Gallery</a>
+            <a href="imagegallery.html">Image Gallery</a>
+
+          </div>
+        </li>
+        <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+        <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
+      </ul>
+    </nav>
+  </div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Wellness & Relaxation</h1>
+            <p>Discover serene destinations and transformative experiences designed to restore your mind, body, and soul.</p>
+        </div>
+    </section>
+
+    <div class="section">
+        <h2 class="section-title">Top Wellness Destinations</h2>
+        <p class="section-subtitle">Handpicked places around the world where luxury meets deep restoration and inner peace.</p>
+
+        <div class="destinations-grid">
+            <div class="dest-card">
+                <img src="ubud.jpg" alt="Ubud">
+                <div class="dest-info">
+                    <h3>Ubud, Bali</h3>
+                    <p>Spiritual heart of Bali with rice terraces, yoga retreats & jungle sanctuaries</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="santorini.jpg" alt="Santorini">
+                <div class="dest-info">
+                    <h3>Santorini, Greece</h3>
+                    <p>Clifftop luxury spas and breathtaking sunset meditation</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="rishikesh.jpg" alt="Rishikesh">
+                <div class="dest-info">
+                    <h3>Rishikesh, India</h3>
+                    <p>Yoga Capital of the World along the sacred Ganges</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="kyoto.jpg" alt="Kyoto">
+                <div class="dest-info">
+                    <h3>Kyoto, Japan</h3>
+                    <p>Zen temples, bamboo forests & mindful walks</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="chiva.jpg" alt="chiva">
+                <div class="dest-info">
+                    <h3>Chiva-Som, Thailand</h3>
+                    <p>Holistic wellness programs to transform mind, body, and spirit.</p>
+                </div>
+            </div>
+
+            <div class="dest-card">
+                <img src="retreat.jpg" alt="retreat">
+                <div class="dest-info">
+                    <h3>Euphoria Retreat, Greece</h3>
+                    <p>Journey towards self-improvement and self discovery</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Types of Wellness Journeys</h2>
+
+        <div class="types">
+            <div class="type-card">
+                <img src="yoga.jpg" alt="Yoga">
+                <h4>Yoga & Meditation Retreats</h4>
+            </div>
+            <div class="type-card">
+                <img src="spa.jpg" alt="Spa">
+                <h4>Luxury Spa & Thermal Escapes</h4>
+            </div>
+            <div class="type-card">
+                <img src="forest.jpg" alt="Nature">
+                <h4>Nature Immersion & Forest Bathing</h4>
+            </div>
+            <div class="type-card">
+                <img src="ayurvedic.jpg" alt="Ayurveda">
+                <h4>Ayurvedic Healing Journeys</h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">Signature Experiences</h2>
+        <p class="section-subtitle">Curated journeys that bring balance, presence, and deep renewal.</p>
+
+        <div class="experiences">
+            <div class="exp-card">
+                <img src="river.jpg" alt="Rishikesh">
+                <div class="exp-info">
+                    <span class="duration">India • 8-14 days</span>
+                    <h3>Yoga & Mindfulness by the Ganges</h3>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <img src="sunset.jpg" alt="Santorini">
+                <div class="exp-info">
+                    <span class="duration">Greece • 6-10 days</span>
+                    <h3>Clifftop Sunset Wellness in Santorini</h3>
+                </div>
+            </div>
+
+            <div class="exp-card">
+                <img src="bathing.jpg" alt="Kyoto">
+                <div class="exp-info">
+                    <span class="duration">Japan • 7-12 days</span>
+                    <h3>Zen Temples & Forest Bathing in Kyoto</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-text">
+            Unfold Earth — Thoughtfully curated sanctuaries for rest, renewal, and reconnection with yourself.
+        </div>
+        <p>© 2026 Unfold Earth • Wellness & Relaxation Journeys</p>
+    </footer>
+
+</body>
+<script>
+let cards = document.querySelectorAll(".dest-card, .type-card, .exp-card");
+
+window.addEventListener("scroll", function () {
+
+    cards.forEach(function(card) {
+
+        let position = card.getBoundingClientRect().top;
+        let screenHeight = window.innerHeight;
+
+        if(position < screenHeight - 100){
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0px)";
+        }
+
+    });
+
+});
+cards.forEach(function(card){
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(50px)";
+    card.style.transition = "1s";
+
+});
+let images = document.querySelectorAll("img");
+
+images.forEach(function(img){
+
+    img.addEventListener("click", function(){
+
+        if(img.style.transform == "scale(1.2)"){
+
+            img.style.transform = "scale(1)";
+        }
+        else{
+
+            img.style.transform = "scale(1.2)";
+        }
+
+        img.style.transition = "0.5s";
+    });
+
+});
+let buttons = document.querySelectorAll("a");
+
+buttons.forEach(function(btn){
+
+    btn.addEventListener("mouseover", function(){
+
+        btn.style.opacity = "0.7";
+    });
+
+    btn.addEventListener("mouseout", function(){
+
+        btn.style.opacity = "1";
+    });
+
+});
+
+</script>
+</html>
