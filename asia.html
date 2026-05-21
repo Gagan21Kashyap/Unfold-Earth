@@ -40,11 +40,12 @@
         .content {
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
-          
+            /* display: flex; */
         }
 
         .ls {
             font-size: 40px;
+            /* font-weight: 400; */
             text-align: center;
             list-style: none;
             padding: 30px;
@@ -74,6 +75,7 @@
 
         .element {
             display: flex;
+            /* flex-direction: column; */
         }
 
         .ls-head {
@@ -112,6 +114,78 @@
             justify-content: center;
             text-align: center;
         }
+
+        /* .nav_item {
+            list-style: none;
+            display: inline-block;
+            padding: 20px;
+            font-size: 30px;
+            justify-content: center;
+            text-shadow: 0 0 20px black;
+            pointer-events: auto;
+            position: fixed;
+        }
+
+        .nav_item a {
+            text-decoration: none;
+            color: white;
+            position: fixed;
+        }
+
+        .nav {
+            justify-content: center;
+            position: fixed;
+        }
+        nav{
+            position: fixed;
+        }
+
+        .nav_container {
+            list-style: none;
+            position: fixed;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropbtn {
+            cursor: pointer;
+            padding-bottom: 20px;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 80%;
+            left: 0;
+            z-index: 9999;
+            background: rgba(0, 0, 0, 0.5);
+            min-width: 220px;
+            border-radius: 3px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12)
+        }
+
+        .dropdown-content a {
+            padding: 12px;
+            display: block;
+            text-decoration: none;
+            font-size: 15px;
+            border-bottom: 1px solid white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .navbar{
+            position:fixed;
+        } */
 
         .navbar{
     position: fixed;
@@ -165,16 +239,117 @@
             font-size: 1.2rem;
             background: #f8fbff;
         }
+
+        /* ====== Content enhancements (navbar/footer unchanged) ====== */
+        .element1 {
+            padding: 120px 24px 30px;
+        }
+
+        .cards {
+            background: rgba(10, 10, 10, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+            transform: translateY(14px);
+            opacity: 0;
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1), opacity 700ms ease, box-shadow 300ms ease, border-color 300ms ease;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+
+        .cards::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 20%), rgba(255,255,255,0.18), transparent 40%);
+            opacity: 0;
+            transition: opacity 300ms ease;
+            pointer-events: none;
+        }
+
+        .cards:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        .cards:hover::before {
+            opacity: 1;
+        }
+
+        .cards.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .moroccan {
+            margin: 18px;
+            width: clamp(120px, 20vw, 220px);
+            height: clamp(120px, 20vw, 220px);
+            object-fit: cover;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+            opacity: 0;
+            transform: translateY(14px) scale(0.98);
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1), opacity 700ms ease;
+            will-change: transform, opacity;
+        }
+
+        .moroccan.reveal {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .moroccan:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+
+        /* Highlight current visible section title */
+        .ls {
+            position: relative;
+            padding: 30px 22px;
+        }
+
+        .ls::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 12px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.9), rgba(0, 229, 255, 0));
+            opacity: 0;
+            transform: scaleX(0.6);
+            transition: opacity 300ms ease, transform 300ms ease;
+        }
+
+        .ls.active::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 900px) {
+            .card-container { grid-template-columns: 1fr; }
+            .moroccan { width: 42vw; height: 42vw; }
+            .element1 { padding-top: 160px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cards, .moroccan { transition: none; transform: none; opacity: 1; }
+            .cards:hover { transform: none; }
+        }
     </style>
 </head>
 
 <body>
     <section class="hero">
-               <div class="heading">
-            <nav class="nav">
-                <ul class="nav-container">
-                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+        <div class="navbar">
+        <nav class="nav">
+            <ul class="nav-container">
+                <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
                     <div class="dropdown-content">
                         <a href="africa.html">Africa </a>
                         <a href="asia.html">Asia </a>
@@ -183,28 +358,24 @@
                         <a href="carribean.html">Carribean </a>
                     </div>
                 </li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
                     <div class="dropdown-content">
                         <a href="beaches.html">Beach</a>
-                        <a href="mountains.html">Mountains</a>
+                        <a href="#">Mountains</a>
                         <a href="wildlife.html">Wildlife</a>
                         <a href="desert.html">Desert</a>
-                        <a href="waterfall.html">Waterfall</a>
-                        <a href="volcanos.html">Volcanoes</a>
-                        <a href="monuments.html">Monuments</a>
-                    </div></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
-                    <div class="dropdown-content">
-                      <a href="artgallery.html">Art Gallery</a>
-                      <a href="imagegallery.html">Image Gallery</a>
-
-                    </div></li>
-                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
-                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
-                </ul>
-              </nav>
+                        <a href="#">Waterfall</a>
+                        <a href="#">Volcanoes</a>
+                    </div>
+                </li>
+                <li class="nav_item"><a href="imagegallery.html"><b>Gallery</b></a></li>
+                <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
+                <li class="nav_item"><a href="#"><b>About us</b></a></li>
+            </ul>
+        </nav>
+        </div>
         <video class="bg-vid" autoplay muted loop playsinline>
-            <source src="eastasia.mp4" type="video/mp4">
+            <source src="img_gagan/eastasia.mp4" type="video/mp4">
         </video>
         <div class="head">
             <h1 class="heading"><b>Asia</b></h1>
@@ -277,9 +448,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="india1.jpg.jpeg" class="moroccan">
-                    <img src="india2.jpg.jpeg" class="moroccan">
-                    <img src="india3.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/india1.jpg" class="moroccan">
+                    <img src="img_gagan/india2.jpg" class="moroccan">
+                    <img src="img_gagan/india3.jpg" class="moroccan">
                 </div>
         </section>
         <b>
@@ -341,9 +512,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="bhutan2.jpeg" class="moroccan">
-            <img src="bhutan3.jpeg" class="moroccan">
-            <img src="bhutan1.jpeg" class="moroccan">
+            <img src="img_gagan/bhutan2.jpg" class="moroccan">
+            <img src="img_gagan/bhutan3.jpg" class="moroccan">
+            <img src="img_gagan/bhutan1.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -403,9 +574,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="nepal3.jpg.jpeg" class="moroccan">
-            <img src="nepal2.jpg.jpeg" class="moroccan">
-            <img src="nepal 1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/nepal3.jpg" class="moroccan">
+            <img src="img_gagan/nepal2.jpg" class="moroccan">
+            <img src="img_gagan/nepal 1.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -459,9 +630,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="maldives1.jpg.jpeg" class="moroccan">
-            <img src="maldives4.jpg.jpeg" class="moroccan">
-            <img src="maldives3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/maldives1.jpg" class="moroccan">
+            <img src="img_gagan/maldives4.jpg" class="moroccan">
+            <img src="img_gagan/maldives3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -517,9 +688,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="china1.jpg.jpeg" class="moroccan">
-            <img src="china2.jpg.jpeg" class="moroccan">
-            <img src="china3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/china1.jpg" class="moroccan">
+            <img src="img_gagan/china2.jpg" class="moroccan">
+            <img src="img_gagan/china3.jpg" class="moroccan">
         </div>
 
         <b>
@@ -569,9 +740,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="japan1.jpg.jpeg" class="moroccan">
-            <img src="japan2.jpg.jpeg" class="moroccan">
-            <img src="japan3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/japan1.jpg" class="moroccan">
+            <img src="img_gagan/japan2.jpg" class="moroccan">
+            <img src="img_gagan/japan3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -623,9 +794,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="mongolia1.jpg.jpeg" class="moroccan">
-            <img src="mongolia2.jpg.jpeg" class="moroccan">
-            <img src="mongolia3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/mongolia1.jpg" class="moroccan">
+            <img src="img_gagan/mongolia2.jpg" class="moroccan">
+            <img src="img_gagan/mongolia3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -676,9 +847,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="taiwan1.jpg.jpeg" class="moroccan">
-            <img src="taiwan2.jpg.jpeg" class="moroccan">
-            <img src="taiwan3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/taiwan1.jpg" class="moroccan">
+            <img src="img_gagan/taiwan2.jpg" class="moroccan">
+            <img src="img_gagan/taiwan3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -729,9 +900,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="brunei1.jpeg" class="moroccan">
-            <img src="brunei2.jpeg" class="moroccan">
-            <img src="brunei3.jpeg" class="moroccan">
+            <img src="img_gagan/brunei1.jpg" class="moroccan">
+            <img src="img_gagan/brunei2.jpg" class="moroccan">
+            <img src="img_gagan/brunei3.jpg" class="moroccan">
         </div>
         <b>
             <li class="ls">Cambodia</li>
@@ -778,9 +949,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="cambodia1.jpeg" class="moroccan">
-            <img src="cambodia2.jpeg" class="moroccan">
-            <img src="cambodia3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/cambodia1.jpg" class="moroccan">
+            <img src="img_gagan/cambodia2.jpg" class="moroccan">
+            <img src="img_gagan/cambodia3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -830,9 +1001,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="indonesia1.jpg.jpeg" class="moroccan">
-            <img src="indonesia2.jpg.jpeg" class="moroccan">
-            <img src="indonesia3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/indonesia1.jpg" class="moroccan">
+            <img src="img_gagan/indonesia2.jpg" class="moroccan">
+            <img src="img_gagan/indonesia3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -880,9 +1051,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="laos1.jpg.jpeg" class="moroccan">
-            <img src="laos2.jpg.jpeg" class="moroccan">
-            <img src="laos3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/laos1.jpg" class="moroccan">
+            <img src="img_gagan/laos2.jpg" class="moroccan">
+            <img src="img_gagan/laos3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -931,9 +1102,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="malaysia1.jpg.jpeg" class="moroccan">
-            <img src="malaysia2.jpg.jpeg" class="moroccan">
-            <img src="malaysia3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/malaysia1.jpg" class="moroccan">
+            <img src="img_gagan/malaysia2.jpg" class="moroccan">
+            <img src="img_gagan/malaysia3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -981,9 +1152,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="mayanmar1.jpg.jpeg" class="moroccan">
-            <img src="mayanmar2.jpg.jpeg" class="moroccan">
-            <img src="mayanmar3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/mayanmar1.jpg" class="moroccan">
+            <img src="img_gagan/mayanmar2.jpg" class="moroccan">
+            <img src="img_gagan/mayanmar3.jpg" class="moroccan">
         </div>
         </ul>
     </section>
@@ -991,6 +1162,52 @@
     <div class="footer">
         © 2026 Unfold Earth | Travel the world 🌎
     </div>
+    <script>
+
+    let heading = document.querySelector(".heading");
+
+    heading.onclick = function () {
+
+        heading.style.color = "yellow";
+    };
+
+    let cards = document.querySelectorAll(".cards");
+
+    cards.forEach(function(card) {
+
+        card.onmouseover = function() {
+
+            card.style.backgroundColor = "rgba(255,255,255,0.2)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.5s";
+        };
+
+        card.onmouseout = function() {
+
+            card.style.backgroundColor = "transparent";
+            card.style.transform = "scale(1)";
+        };
+
+    });
+
+
+    let images = document.querySelectorAll(".moroccan");
+
+    images.forEach(function(img) {
+
+        img.onmouseover = function() {
+
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.5s";
+        };
+
+        img.onmouseout = function() {
+
+            img.style.transform = "scale(1)";
+        };
+
+    });
+    </script>
 </body>
 
 </html>

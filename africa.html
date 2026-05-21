@@ -34,10 +34,12 @@
         .content {
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
+            /* display: flex; */
         }
 
         .ls {
             font-size: 40px;
+            /* font-weight: 400; */
             text-align: center;
             list-style: none;
             padding: 30px;
@@ -68,6 +70,7 @@
 
         .element {
             display: flex;
+            /* flex-direction: column; */
         }
 
         .card-container {
@@ -156,6 +159,107 @@
             font-size: 1.2rem;
             background: #f8fbff;
         }
+
+        /* ====== Content enhancements (navbar/footer unchanged) ====== */
+        .element1 {
+            padding: 120px 24px 30px;
+        }
+
+        .cards {
+            background: rgba(10, 10, 10, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+            transform: translateY(14px);
+            opacity: 0;
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1), opacity 700ms ease, box-shadow 300ms ease, border-color 300ms ease;
+            position: relative;
+            overflow: hidden;
+            will-change: transform, opacity;
+        }
+
+        .cards::before {
+            content: "";
+            position: absolute;
+            inset: -2px;
+            background: radial-gradient(600px circle at var(--mx, 50%) var(--my, 20%), rgba(255,255,255,0.18), transparent 40%);
+            opacity: 0;
+            transition: opacity 300ms ease;
+            pointer-events: none;
+        }
+
+        .cards:hover {
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 26px 70px rgba(0, 0, 0, 0.35);
+            transform: translateY(-2px) scale(1.01);
+        }
+
+        .cards:hover::before {
+            opacity: 1;
+        }
+
+        .cards.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .moroccan {
+            margin: 18px;
+            width: clamp(120px, 20vw, 220px);
+            height: clamp(120px, 20vw, 220px);
+            object-fit: cover;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.25);
+            opacity: 0;
+            transform: translateY(14px) scale(0.98);
+            transition: transform 700ms cubic-bezier(.2,.8,.2,1), opacity 700ms ease;
+            will-change: transform, opacity;
+        }
+
+        .moroccan.reveal {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .moroccan:hover {
+            transform: translateY(-6px) scale(1.03);
+        }
+
+        /* Highlight current visible section title */
+        .ls {
+            position: relative;
+            padding: 30px 22px;
+        }
+
+        .ls::after {
+            content: "";
+            position: absolute;
+            left: 10%;
+            right: 10%;
+            bottom: 12px;
+            height: 3px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, rgba(0, 229, 255, 0), rgba(0, 229, 255, 0.9), rgba(0, 229, 255, 0));
+            opacity: 0;
+            transform: scaleX(0.6);
+            transition: opacity 300ms ease, transform 300ms ease;
+        }
+
+        .ls.active::after {
+            opacity: 1;
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 900px) {
+            .card-container { grid-template-columns: 1fr; }
+            .moroccan { width: 42vw; height: 42vw; }
+            .element1 { padding-top: 160px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .cards, .moroccan { transition: none; transform: none; opacity: 1; }
+            .cards:hover { transform: none; }
+        }
     </style>
 </head>
 
@@ -196,7 +300,7 @@
               </nav>
         </div>
         <video class="bg-vid" autoplay muted loop playsinline>
-            <source src="eastafrica.mp4" type="video/mp4">
+            <source src="img_gagan/northafrica.mp4" type="video/mp4">
         </video>
         <div class="head">
             <h1 class="heading"><b>Africa</b></h1>
@@ -249,9 +353,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="moroccan1.1.png" class="moroccan">
-                    <img src="moroccon2.jpg.jpeg" class="moroccan">
-                    <img src="moroccon3.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/moroccan1.1.png" class="moroccan">
+                    <img src="img_gagan/moroccon2.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/moroccon3.jpg.jpeg" class="moroccan">
                 </div>
                 <b>
                     <li class="ls">Tunisia</li>
@@ -298,9 +402,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="tunisia1.jpg.jpeg" class="moroccan">
-                    <img src="tunisia2.jpg.jpeg" class="moroccan">
-                    <img src="tunisia3.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/tunisia1.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/tunisia2.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/tunisia3.jpg.jpeg" class="moroccan">
                 </div>
         </section>
         <b>
@@ -345,9 +449,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="uganda1.jpg.jpeg" class="moroccan">
-            <img src="uganda2.jpg.jpeg" class="moroccan">
-            <img src="uganda3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/uganda1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/uganda2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/uganda3.jpg.jpeg" class="moroccan">
         </div>
         </ul>
 
@@ -393,9 +497,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="kenya2.jpg.jpeg" class="moroccan">
-            <img src="kenya1.jpg.jpeg" class="moroccan">
-            <img src="kenya3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/kenya2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/kenya1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/kenya3.jpg.jpeg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -442,9 +546,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="egypt1.jpg.jpeg" class="moroccan">
-            <img src="egypt2.jpg.jpeg" class="moroccan">
-            <img src="egypt3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/egypt1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/egypt2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/egypt3.jpg.jpeg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -486,9 +590,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="nambia1.jpg.jpeg" class="moroccan">
-            <img src="nambia2.jpg.jpeg" class="moroccan">
-            <img src="nambia3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/nambia1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/nambia2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/nambia3.jpg.jpeg" class="moroccan">
         </div>
 
         <b>
@@ -533,9 +637,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="zimbabwe1.jpg.jpeg" class="moroccan">
-            <img src="zimbabwe2.jpg.jpeg" class="moroccan">
-            <img src="zimbabwe3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe3.jpg.jpeg" class="moroccan">
         </div>
         </ul>
 
@@ -587,9 +691,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="zimbabwe1.jpg.jpeg" class="moroccan">
-            <img src="zimbabwe2.jpg.jpeg" class="moroccan">
-            <img src="zimbabwe3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe1.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/zimbabwe3.jpg.jpeg" class="moroccan">
         </div>
         </ul>
     </section>
@@ -597,6 +701,54 @@
     <div class="footer">
         © 2026 Unfold Earth | Travel the world 🌎
     </div>
+
+ 
+<script>
+
+    let heading = document.querySelector(".heading");
+
+    heading.onclick = function () {
+
+        heading.style.color = "yellow";
+    };
+
+    let cards = document.querySelectorAll(".cards");
+
+    cards.forEach(function(card) {
+
+        card.onmouseover = function() {
+
+            card.style.backgroundColor = "rgba(255,255,255,0.2)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.5s";
+        };
+
+        card.onmouseout = function() {
+
+            card.style.backgroundColor = "transparent";
+            card.style.transform = "scale(1)";
+        };
+
+    });
+
+
+    let images = document.querySelectorAll(".moroccan");
+
+    images.forEach(function(img) {
+
+        img.onmouseover = function() {
+
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.5s";
+        };
+
+        img.onmouseout = function() {
+
+            img.style.transform = "scale(1)";
+        };
+
+    });
+    </script>
 </body>
 
 </html>

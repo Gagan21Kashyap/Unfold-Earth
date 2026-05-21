@@ -40,10 +40,12 @@
         .content {
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
+            /* display: flex; */
         }
 
         .ls {
             font-size: 40px;
+            /* font-weight: 400; */
             text-align: center;
             list-style: none;
             padding: 30px;
@@ -54,6 +56,7 @@
             height: 20%;
             width: 20%;
             display: inline-block;
+            /* flex-direction: column; */
             border-radius: 20px;
             aspect-ratio: 1/1;
         }
@@ -73,6 +76,7 @@
 
         .element {
             display: flex;
+            /* flex-direction: column; */
         }
 
         .ls-head {
@@ -97,6 +101,9 @@
             align-self: center;
             justify-content: center;
             display: flex;
+            /* flex-direction: column; */
+            /* width:50%; */
+            /* margin:auto; */
         }
 
         hr {
@@ -168,41 +175,38 @@
 
 <body>
     <section class="hero">
-             <div class="heading">
-            <nav class="nav">
-                <ul class="nav-container">
-                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+        <div class="navbar">
+        <nav class="nav">
+            <ul class="nav-container">
+                <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
                     <div class="dropdown-content">
                         <a href="africa.html">Africa </a>
                         <a href="asia.html">Asia </a>
                         <a href="america.html">America </a>
                         <a href="europe.html">Europe </a>
                         <a href="carribean.html">Carribean </a>
+
                     </div>
                 </li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
                     <div class="dropdown-content">
-                        <a href="beaches.html">Beach</a>
-                        <a href="mountains.html">Mountains</a>
-                        <a href="wildlife.html">Wildlife</a>
-                        <a href="desert.html">Desert</a>
-                        <a href="waterfall.html">Waterfall</a>
-                        <a href="volcanos.html">Volcanoes</a>
-                        <a href="monuments.html">Monuments</a>
-                    </div></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
-                    <div class="dropdown-content">
-                      <a href="artgallery.html">Art Gallery</a>
-                      <a href="imagegallery.html">Image Gallery</a>
-
-                    </div></li>
-                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
-                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
-                </ul>
-              </nav>
+                        <a href="#">Beach</a>
+                        <a href="#">Mountains</a>
+                        <a href="#">Wildlife</a>
+                        <a href="#">Desert</a>
+                        <a href="#">Waterfall</a>
+                        <a href="#">Volcanoes</a>
+                    </div>
+                </li>
+                <li class="nav_item"><a href="imagegallery.html"><b>Gallery</b></a></li>
+                <li class="nav_item"><a href="#"><b>Contact us</b></a></li>
+                <li class="nav_item"><a href="#"><b>About us</b></a></li>
+            </ul>
+        </nav>
+        </div>
         <video class="bg-vid" autoplay muted loop playsinline>
-            <source src="america.mp4" type="video/mp4">
+            <source src="img_gagan/america.mp4" type="video/mp4">
         </video>
         <div class="head">
             <h1 class="heading"><b>America</b></h1>
@@ -221,16 +225,16 @@
                     <div class="cards">
                         <ul class="nested-ls1">
                             <h1 class="ls-head">Famous Cities</h1>
-                            <li class="ls-content">Belize City - Largest city and cultural center</li>
-                            <li class="ls-content">San Ignacio - Gateway to Mayan ruins</li>
-                            <li class="ls-content">Dangriga - Known for Garifuna culture</li>
+                            <li class="ls-content">Belize City – Largest city and cultural center</li>
+                            <li class="ls-content">San Ignacio – Gateway to Mayan ruins</li>
+                            <li class="ls-content">Dangriga – Known for Garifuna culture</li>
                         </ul>
                     </div>
                     <div class="cards">
                         <ul class="nested-ls2">
                             <h1 class="ls-head">Popular Attractions</h1>
-                            <li class="ls-content">Great Blue Hole - Famous diving site</li>
-                            <li class="ls-content">Belize Barrier Reef - Second-largest coral reef</li>
+                            <li class="ls-content">Great Blue Hole – Famous diving site</li>
+                            <li class="ls-content">Belize Barrier Reef – Second-largest coral reef</li>
                         </ul>
                     </div>
                     <div class="cards">
@@ -260,9 +264,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="belize1.jpeg" class="moroccan">
-                    <img src="belize2.jpeg" class="moroccan">
-                    <img src="belize3.jpeg" class="moroccan">
+                    <img src="img_gagan/belize1.jpg" class="moroccan">
+                    <img src="img_gagan/belize2.jpg" class="moroccan">
+                    <img src="img_gagan/belize3.jpg" class="moroccan">
                 </div>
         </section>
         <b>
@@ -275,16 +279,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">San Jose- Capital city</li>
-                    <li class="ls-content">Liberia - Gateway to national parks</li>
-                    <li class="ls-content">Puerto Limón - Caribbean coastal city</li>
+                    <li class="ls-content">San Jose– Capital city</li>
+                    <li class="ls-content">Liberia – Gateway to national parks</li>
+                    <li class="ls-content">Puerto Limón – Caribbean coastal city</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Arenal Volcano - Active volcano with hot springs</li>
-                    <li class="ls-content">Manuel Antonio National Park - Famous beaches and wildlife</li>
+                    <li class="ls-content">Arenal Volcano – Active volcano with hot springs</li>
+                    <li class="ls-content">Manuel Antonio National Park – Famous beaches and wildlife</li>
                 </ul>
             </div>
             <div class="cards">
@@ -311,9 +315,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="rica1.jpg.jpeg" class="moroccan">
-            <img src="rica2.jpg.jpeg" class="moroccan">
-            <img src="rica3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/rica1.jpg" class="moroccan">
+            <img src="img_gagan/rica2.jpg" class="moroccan">
+            <img src="img_gagan/rica3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -327,16 +331,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">San Salvador - Capital city
-                        Santa Ana - Historic city
-                        La Libertad - Surfing destination</li>
+                    <li class="ls-content">San Salvador – Capital city
+                        Santa Ana – Historic city
+                        La Libertad – Surfing destination</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Santa Ana Volcano - Popular hiking destination</li>
-                    <li class="ls-content">Ruta de las Flores - Scenic cultural route</li>
+                    <li class="ls-content">Santa Ana Volcano – Popular hiking destination</li>
+                    <li class="ls-content">Ruta de las Flores – Scenic cultural route</li>
                 </ul>
             </div>
             <div class="cards">
@@ -363,9 +367,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="el1.jpg.jpeg" class="moroccan">
-            <img src="el2.jpg.jpeg" class="moroccan">
-            <img src="el3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/el1.jpg" class="moroccan">
+            <img src="img_gagan/el2.jpg" class="moroccan">
+            <img src="img_gagan/el3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -378,16 +382,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Guatemala City - Capital city</li>
-                    <li class="ls-content">Antigua - Historic colonial town</li>
-                    <li class="ls-content">Flores - Gateway to Tikal ruins</li>
+                    <li class="ls-content">Guatemala City – Capital city</li>
+                    <li class="ls-content">Antigua – Historic colonial town</li>
+                    <li class="ls-content">Flores – Gateway to Tikal ruins</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Tikal - Ancient Mayan city in the jungle</li>
-                    <li class="ls-content">Lake Atitlán - Scenic lake surrounded by volcanoes</li>
+                    <li class="ls-content">Tikal – Ancient Mayan city in the jungle</li>
+                    <li class="ls-content">Lake Atitlán – Scenic lake surrounded by volcanoes</li>
                 </ul>
             </div>
             <div class="cards">
@@ -414,9 +418,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="guat1.jpg.jpeg" class="moroccan">
-            <img src="guat2.jpg.jpeg" class="moroccan">
-            <img src="guat3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/guat1.jpg" class="moroccan">
+            <img src="img_gagan/guat2.jpg" class="moroccan">
+            <img src="img_gagan/guat3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -429,16 +433,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Tegucigalpa - Capital city</li>
-                    <li class="ls-content">San Pedro Sula - Industrial center</li>
-                    <li class="ls-content">La Ceiba - Gateway to islands</li>
+                    <li class="ls-content">Tegucigalpa – Capital city</li>
+                    <li class="ls-content">San Pedro Sula – Industrial center</li>
+                    <li class="ls-content">La Ceiba – Gateway to islands</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Copán Ruins - Important Mayan archaeological site</li>
-                    <li class="ls-content">Roatán Island - Popular diving destination</li>
+                    <li class="ls-content">Copán Ruins – Important Mayan archaeological site</li>
+                    <li class="ls-content">Roatán Island – Popular diving destination</li>
                 </ul>
             </div>
             <div class="cards">
@@ -465,9 +469,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="hondu1.jpg.jpeg" class="moroccan">
-            <img src="hondu2.jpg.jpeg" class="moroccan">
-            <img src="hondu3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/hondu1.jpg" class="moroccan">
+            <img src="img_gagan/hondu2.jpg" class="moroccan">
+            <img src="img_gagan/hondu3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -480,16 +484,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Managua - Capital city</li>
-                    <li class="ls-content">Granada - Historic colonial city</li>
-                    <li class="ls-content">León - Cultural and artistic center</li>
+                    <li class="ls-content">Managua – Capital city</li>
+                    <li class="ls-content">Granada – Historic colonial city</li>
+                    <li class="ls-content">León – Cultural and artistic center</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Ometepe Island - Island with two volcanoes</li>
-                    <li class="ls-content">Masaya Volcano - Active volcano</li>
+                    <li class="ls-content">Ometepe Island – Island with two volcanoes</li>
+                    <li class="ls-content">Masaya Volcano – Active volcano</li>
                 </ul>
             </div>
             <div class="cards">
@@ -516,9 +520,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="nicara1.jpg.jpeg" class="moroccan">
-            <img src="nicara2.jpg.jpeg" class="moroccan">
-            <img src="nicara3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/nicara1.jpg" class="moroccan">
+            <img src="img_gagan/nicara2.jpg" class="moroccan">
+            <img src="img_gagan/nicara3.jpg" class="moroccan">
         </div>
 
         </ul>
@@ -533,17 +537,17 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">New York City - Known for Times Square, Central Park, and the Statue of Liberty</li>
-<li class="ls-content">Los Angeles - Home of Hollywood and the film industry</li>
-<li class="ls-content">Las Vegas - Famous for casinos, nightlife, and entertainment</li>
+                    <li class="ls-content">New York City – Known for Times Square, Central Park, and the Statue of Liberty</li>
+<li class="ls-content">Los Angeles – Home of Hollywood and the film industry</li>
+<li class="ls-content">Las Vegas – Famous for casinos, nightlife, and entertainment</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Statue of Liberty - Iconic landmark in New York</li>
-<li class="ls-content">Grand Canyon - One of the world’s most famous natural wonders</li>
-<li class="ls-content">Golden Gate Bridge - Famous bridge in San Francisco</li>
+                    <li class="ls-content">Statue of Liberty – Iconic landmark in New York</li>
+<li class="ls-content">Grand Canyon – One of the world’s most famous natural wonders</li>
+<li class="ls-content">Golden Gate Bridge – Famous bridge in San Francisco</li>
                 </ul>
             </div>
             <div class="cards">
@@ -570,9 +574,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="us1.jpg.jpeg" class="moroccan">
-            <img src="us3.jpg.jpeg" class="moroccan">
-            <img src="us2.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/us1.jpg" class="moroccan">
+            <img src="img_gagan/us3.jpg" class="moroccan">
+            <img src="img_gagan/us2.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -585,16 +589,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Toronto - Largest city with the famous CN Tower</li>
-<li class="ls-content">Vancouver - Coastal city surrounded by mountains</li>
-<li class="ls-content">Montreal - Historic city with French culture</li>
+                    <li class="ls-content">Toronto – Largest city with the famous CN Tower</li>
+<li class="ls-content">Vancouver – Coastal city surrounded by mountains</li>
+<li class="ls-content">Montreal – Historic city with French culture</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Niagara Falls - One of the most famous waterfalls in the world</li>
-<li class="ls-content">Banff National Park - Stunning mountain scenery</li>
+                    <li class="ls-content">Niagara Falls – One of the most famous waterfalls in the world</li>
+<li class="ls-content">Banff National Park – Stunning mountain scenery</li>
                 </ul>
             </div>
             <div class="cards">
@@ -621,9 +625,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="canada1.jpg.jpeg" class="moroccan">
-            <img src="canada2.jpg.jpeg" class="moroccan">
-            <img src="canada3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/canada1.jpg" class="moroccan">
+            <img src="img_gagan/canada2.jpg" class="moroccan">
+            <img src="img_gagan/canada3.jpg" class="moroccan">
         </div>
 
         </ul>
@@ -637,16 +641,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Mexico City - Capital and cultural center</li>
-<li class="ls-content">Cancún - Popular beach resort destination</li>
-<li class="ls-content">Guadalajara - Known for mariachi music and traditions</li>
+                    <li class="ls-content">Mexico City – Capital and cultural center</li>
+<li class="ls-content">Cancún – Popular beach resort destination</li>
+<li class="ls-content">Guadalajara – Known for mariachi music and traditions</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Chichén Itzá - Famous Mayan pyramid</li>
-<li class="ls-content">Tulum - Ancient ruins near the Caribbean Sea</li>
+                    <li class="ls-content">Chichén Itzá – Famous Mayan pyramid</li>
+<li class="ls-content">Tulum – Ancient ruins near the Caribbean Sea</li>
                 </ul>
             </div>
             <div class="cards">
@@ -673,9 +677,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="mexico1.webp" class="moroccan">
-            <img src="mexico2.jpeg" class="moroccan">
-            <img src="mexico3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/mexico1.webp" class="moroccan">
+            <img src="img_gagan/mexico2.jpeg" class="moroccan">
+            <img src="img_gagan/mexico3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -688,16 +692,16 @@
             <div class="cards">
                 <ul class="nested-ls1">
                     <h1 class="ls-head">Famous Cities</h1>
-                    <li class="ls-content">Rio de Janeiro - Known for beaches and Christ the Redeemer statue</li>
-<li class="ls-content">São Paulo - Largest city and financial center</li>
-<li class="ls-content">Salvador - Historic city with colorful architecture</li>
+                    <li class="ls-content">Rio de Janeiro – Known for beaches and Christ the Redeemer statue</li>
+<li class="ls-content">São Paulo – Largest city and financial center</li>
+<li class="ls-content">Salvador – Historic city with colorful architecture</li>
                 </ul>
             </div>
             <div class="cards">
                 <ul class="nested-ls2">
                     <h1 class="ls-head">Popular Attractions</h1>
-                    <li class="ls-content">Christ the Redeemer - One of the New Seven Wonders of the World</li>
-<li class="ls-content">Amazon Rainforest - Largest rainforest on Earth</li>
+                    <li class="ls-content">Christ the Redeemer – One of the New Seven Wonders of the World</li>
+<li class="ls-content">Amazon Rainforest – Largest rainforest on Earth</li>
                 </ul>
             </div>
             <div class="cards">
@@ -724,9 +728,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="brazil1.jpeg" class="moroccan">
-            <img src="brazil2.jpeg" class="moroccan">
-            <img src="brazil3.jpeg" class="moroccan">
+            <img src="img_gagan/brazil1.jpg" class="moroccan">
+            <img src="img_gagan/brazil2.jpeg" class="moroccan">
+            <img src="img_gagan/brazil3.jpg" class="moroccan">
         </div>
 
         </ul>
@@ -735,6 +739,57 @@
 <div class="footer">
     © 2026 Unfold Earth | Travel the world 🌎
 </div>
+
+<script>
+
+    let heading = document.querySelector(".heading");
+
+    heading.onclick = function () {
+
+        heading.style.color = "yellow";
+    };
+
+    let cards = document.querySelectorAll(".cards");
+
+    cards.forEach(function(card) {
+
+        card.onmouseover = function() {
+
+            card.style.backgroundColor = "rgba(255,255,255,0.2)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.5s";
+        };
+
+        card.onmouseout = function() {
+
+            card.style.backgroundColor = "transparent";
+            card.style.transform = "scale(1)";
+        };
+
+    });
+
+
+    let images = document.querySelectorAll(".moroccan");
+
+    images.forEach(function(img) {
+
+        img.onmouseover = function() {
+
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.5s";
+        };
+
+        img.onmouseout = function() {
+
+            img.style.transform = "scale(1)";
+        };
+
+    });
+
+</script>
+
+    </script>
 </body>
+
 
 </html>

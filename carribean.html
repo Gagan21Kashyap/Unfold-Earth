@@ -40,10 +40,12 @@
         .content {
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
+            /* display: flex; */
         }
 
         .ls {
             font-size: 40px;
+            /* font-weight: 400; */
             text-align: center;
             list-style: none;
             padding: 30px;
@@ -54,6 +56,7 @@
             height: 20%;
             width: 20%;
             display: inline-block;
+            /* flex-direction: column; */
             border-radius: 20px;
             aspect-ratio: 1/1;
         }
@@ -73,6 +76,7 @@
 
         .element {
             display: flex;
+            /* flex-direction: column; */
         }
 
         .ls-head {
@@ -97,6 +101,9 @@
             align-self: center;
             justify-content: center;
             display: flex;
+            /* flex-direction: column; */
+            /* width:50%; */
+            /* margin:auto; */
         }
 
         hr {
@@ -169,42 +176,38 @@
 
 <body>
     <section class="hero">
-        <div class="heading">
-            <nav class="nav">
-                <ul class="nav-container">
-                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+        <div class="navbar">
+        <nav class="nav">
+            <ul class="nav-container">
+                <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
                     <div class="dropdown-content">
                         <a href="africa.html">Africa </a>
                         <a href="asia.html">Asia </a>
                         <a href="america.html">America </a>
                         <a href="europe.html">Europe </a>
                         <a href="carribean.html">Carribean </a>
+
                     </div>
                 </li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
                     <div class="dropdown-content">
-                        <a href="beaches.html">Beach</a>
-                        <a href="mountains.html">Mountains</a>
-                        <a href="wildlife.html">Wildlife</a>
-                        <a href="desert.html">Desert</a>
-                        <a href="waterfall.html">Waterfall</a>
-                        <a href="volcanos.html">Volcanoes</a>
-                        <a href="monuments.html">Monuments</a>
-                    </div></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
-                    <div class="dropdown-content">
-                      <a href="artgallery.html">Art Gallery</a>
-                      <a href="imagegallery.html">Image Gallery</a>
-
-                    </div></li>
-                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
-                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
-                </ul>
-              </nav>
+                        <a href="#">Beach</a>
+                        <a href="#">Mountains</a>
+                        <a href="#">Wildlife</a>
+                        <a href="#">Desert</a>
+                        <a href="#">Waterfall</a>
+                        <a href="#">Volcanoes</a>
+                    </div>
+                </li>
+                <li class="nav_item"><a href="imagegallery.html"><b>Gallery</b></a></li>
+                <li class="nav_item"><a href="#"><b>Contact us</b></a></li>
+                <li class="nav_item"><a href="#"><b>About us</b></a></li>
+            </ul>
+        </nav>
         </div>
         <video class="bg-vid" autoplay muted loop playsinline>
-            <source src="carribean.mp4" type="video/mp4">
+            <source src="img_gagan/carribean.mp4" type="video/mp4">
         </video>
         <div class="head">
             <h1 class="heading"><b>Carribean</b></h1>
@@ -262,9 +265,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="bahamas1.webp" class="moroccan">
-                    <img src="bahamas2.jpg.jpeg" class="moroccan">
-                    <img src="bahamas3.webp" class="moroccan">
+                    <img src="img_gagan/bahamas1.webp" class="moroccan">
+                    <img src="img_gagan/bahamas2.jpg" class="moroccan">
+                    <img src="img_gagan/bahamas3.webp" class="moroccan">
                 </div>
         </section>
         <b>
@@ -313,9 +316,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="jamaica.jpg.jpeg" class="moroccan">
-            <img src="jamaica1.jpg.jpeg" class="moroccan">
-            <img src="jamaica3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/jamaica.jpg" class="moroccan">
+            <img src="img_gagan/jamaica1.jpg" class="moroccan">
+            <img src="img_gagan/jamaica3.webp" class="moroccan">
         </div>
         </ul>
         <b>
@@ -365,9 +368,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="domi1.jpg.jpeg" class="moroccan">
-            <img src="domi2.jpg.jpeg" class="moroccan">
-            <img src="domi3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/domi1.jpg" class="moroccan">
+            <img src="img_gagan/domi2.jpg" class="moroccan">
+            <img src="img_gagan/domi3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -416,9 +419,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="cuba1.jpg.jpeg" class="moroccan">
-            <img src="cuba2.jpg.jpeg" class="moroccan">
-            <img src="cuba3.jpeg" class="moroccan">
+            <img src="img_gagan/cuba1.jpg" class="moroccan">
+            <img src="img_gagan/cuba2.jpg" class="moroccan">
+            <img src="img_gagan/cuba3.jpeg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -468,9 +471,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="bar2.jpeg" class="moroccan">
-            <img src="bar1.jpeg" class="moroccan">
-            <img src="bar3.jpeg" class="moroccan">
+            <img src="img_gagan/bar2.jpg" class="moroccan">
+            <img src="img_gagan/bar1.jpg" class="moroccan">
+            <img src="img_gagan/bar3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -520,9 +523,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="saint1.jpg.jpeg" class="moroccan">
-            <img src="saint2.webp" class="moroccan">
-            <img src="saint3.webp" class="moroccan">
+            <img src="img_gagan/saint1.jpg" class="moroccan">
+            <img src="img_gagan/saint2.webp" class="moroccan">
+            <img src="img_gagan/saint3.webp" class="moroccan">
         </div>
 
         </ul>
@@ -532,6 +535,52 @@
 <div class="footer">
     © 2026 Unfold Earth | Travel the world 🌎
 </div>
+   <script>
+
+    let heading = document.querySelector(".heading");
+
+    heading.onclick = function () {
+
+        heading.style.color = "yellow";
+    };
+
+    let cards = document.querySelectorAll(".cards");
+
+    cards.forEach(function(card) {
+
+        card.onmouseover = function() {
+
+            card.style.backgroundColor = "rgba(255,255,255,0.2)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.5s";
+        };
+
+        card.onmouseout = function() {
+
+            card.style.backgroundColor = "transparent";
+            card.style.transform = "scale(1)";
+        };
+
+    });
+
+
+    let images = document.querySelectorAll(".moroccan");
+
+    images.forEach(function(img) {
+
+        img.onmouseover = function() {
+
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.5s";
+        };
+
+        img.onmouseout = function() {
+
+            img.style.transform = "scale(1)";
+        };
+
+    });
+    </script>
 </body>
 
 </html>

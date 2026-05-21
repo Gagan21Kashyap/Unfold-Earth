@@ -40,10 +40,12 @@
         .content {
             color: white;
             background-color: rgba(0, 0, 0, 0.4);
+            /* display: flex; */
         }
 
         .ls {
             font-size: 40px;
+            /* font-weight: 400; */
             text-align: center;
             list-style: none;
             padding: 30px;
@@ -54,6 +56,7 @@
             height: 20%;
             width: 20%;
             display: inline-block;
+            /* flex-direction: column; */
             border-radius: 20px;
             aspect-ratio: 1/1;
         }
@@ -73,6 +76,7 @@
 
         .element {
             display: flex;
+            /* flex-direction: column; */
         }
 
         .ls-head {
@@ -97,6 +101,9 @@
             align-self: center;
             justify-content: center;
             display: flex;
+            /* flex-direction: column; */
+            /* width:50%; */
+            /* margin:auto; */
         }
 
         hr {
@@ -169,11 +176,11 @@
 
 <body>
     <section class="hero">
-             <div class="heading">
-            <nav class="nav">
-                <ul class="nav-container">
-                    <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
+        <div class="navbar">
+        <nav class="nav">
+            <ul class="nav-container">
+                <li class="nav_item"><a href="grid.html"><b>Home</b></a></li>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Destinations</b></a>
                     <div class="dropdown-content">
                         <a href="africa.html">Africa </a>
                         <a href="asia.html">Asia </a>
@@ -182,28 +189,24 @@
                         <a href="carribean.html">Carribean </a>
                     </div>
                 </li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
+                <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Categories</b></a>
                     <div class="dropdown-content">
-                        <a href="beaches.html">Beach</a>
-                        <a href="mountains.html">Mountains</a>
-                        <a href="wildlife.html">Wildlife</a>
-                        <a href="desert.html">Desert</a>
-                        <a href="waterfall.html">Waterfall</a>
-                        <a href="volcanos.html">Volcanoes</a>
-                        <a href="monuments.html">Monuments</a>
-                    </div></li>
-                    <li class="nav_item dropdown"><a href="#" class="dropbtn"><b>Gallery</b></a>
-                    <div class="dropdown-content">
-                      <a href="artgallery.html">Art Gallery</a>
-                      <a href="imagegallery.html">Image Gallery</a>
-
-                    </div></li>
-                    <li class="nav_item"><a href="contact.html"><b>Contact us</b></a></li>
-                    <li class="nav_item"><a href="aboutus.html"><b>About us</b></a></li>
-                </ul>
-              </nav>
+                        <a href="#">Beach</a>
+                        <a href="#">Mountains</a>
+                        <a href="#">Wildlife</a>
+                        <a href="#">Desert</a>
+                        <a href="#">Waterfall</a>
+                        <a href="#">Volcanoes</a>
+                    </div>
+                </li>
+                <li class="nav_item"><a href="imagegallery.html"><b>Gallery</b></a></li>
+                <li class="nav_item"><a href="#"><b>Contact us</b></a></li>
+                <li class="nav_item"><a href="#"><b>About us</b></a></li>
+            </ul>
+        </nav>
+        </div>
         <video class="bg-vid" autoplay muted loop playsinline>
-            <source src="europe.mp4" type="video/mp4">
+            <source src="img_gagan/europe.mp4" type="video/mp4">
         </video>
         <div class="head">
             <h1 class="heading"><b>Europe</b></h1>
@@ -262,9 +265,9 @@
                     </div>
                 </div>
                 <div class="images">
-                    <img src="france1.jpg.jpeg" class="moroccan">
-                    <img src="france2.jpg.jpeg" class="moroccan">
-                    <img src="france3.jpg.jpeg" class="moroccan">
+                    <img src="img_gagan/france1.jpg" class="moroccan">
+                    <img src="img_gagan/france2.jpg" class="moroccan">
+                    <img src="img_gagan/france3.jpg" class="moroccan">
                 </div>
         </section>
         <b>
@@ -314,9 +317,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="italy1.jpg.jpeg" class="moroccan">
-            <img src="italy2.jpg.jpeg" class="moroccan">
-            <img src="italy3.webp" class="moroccan">
+            <img src="img_gagan/italy1.jpg" class="moroccan">
+            <img src="img_gagan/italy2.jpg" class="moroccan">
+            <img src="img_gagan/italy3.webp" class="moroccan">
         </div>
         </ul>
         <b>
@@ -365,9 +368,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="spain1.jpg.jpeg" class="moroccan">
-            <img src="spain2.jpg.jpeg" class="moroccan">
-            <img src="spain3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/spain1.jpg" class="moroccan">
+            <img src="img_gagan/spain2.jpg" class="moroccan">
+            <img src="img_gagan/spain3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -417,9 +420,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="uk1.jpg.jpeg" class="moroccan">
-            <img src="uk2.jpg.jpeg" class="moroccan">
-            <img src="uk3.avif" class="moroccan">
+            <img src="img_gagan/uk1.jpg" class="moroccan">
+            <img src="img_gagan/uk2.jpg" class="moroccan">
+            <img src="img_gagan/uk3.avif" class="moroccan">
         </div>
         </ul>
         <b>
@@ -468,9 +471,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="germany1.jpg.jpeg" class="moroccan">
-            <img src="germany2.webp" class="moroccan">
-            <img src="germany3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/germany1.jpg" class="moroccan">
+            <img src="img_gagan/germany2.webp" class="moroccan">
+            <img src="img_gagan/germany3.jpg" class="moroccan">
         </div>
         </ul>
         <b>
@@ -519,9 +522,9 @@
             </div>
         </div>
         <div class="images">
-            <img src="swit1.jpg.jpeg" class="moroccan">
-            <img src="swit2.jpeg" class="moroccan">
-            <img src="swit3.jpg.jpeg" class="moroccan">
+            <img src="img_gagan/swit1.jpg" class="moroccan">
+            <img src="img_gagan/swit2.jpeg" class="moroccan">
+            <img src="img_gagan/swit3.jpg" class="moroccan">
         </div>
 
         </ul>
@@ -532,4 +535,50 @@
 </div>
 </body>
 
+    <script>
+
+    let heading = document.querySelector(".heading");
+
+    heading.onclick = function () {
+
+        heading.style.color = "yellow";
+    };
+
+    let cards = document.querySelectorAll(".cards");
+
+    cards.forEach(function(card) {
+
+        card.onmouseover = function() {
+
+            card.style.backgroundColor = "rgba(255,255,255,0.2)";
+            card.style.transform = "scale(1.05)";
+            card.style.transition = "0.5s";
+        };
+
+        card.onmouseout = function() {
+
+            card.style.backgroundColor = "transparent";
+            card.style.transform = "scale(1)";
+        };
+
+    });
+
+
+    let images = document.querySelectorAll(".moroccan");
+
+    images.forEach(function(img) {
+
+        img.onmouseover = function() {
+
+            img.style.transform = "scale(1.1)";
+            img.style.transition = "0.5s";
+        };
+
+        img.onmouseout = function() {
+
+            img.style.transform = "scale(1)";
+        };
+
+    });
+    </script>
 </html>
